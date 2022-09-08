@@ -1,2 +1,3 @@
 *.astro
 *astro.config*
+.eslintrc.js
