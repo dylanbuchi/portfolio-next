@@ -12,7 +12,7 @@ export default function NavItemList({
   isMobile = false,
 }: NavItemProps) {
   const activeStyle =
-    'bg-gray-900 text-white cursor-default pointer-events-none';
+    'bg-gray-900 text-gray-100 cursor-default pointer-events-none';
 
   const navItemNames = new Set<string>([
     'Home',
