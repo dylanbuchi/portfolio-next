@@ -9,7 +9,7 @@ interface NavItemProps {
   isMobile?: boolean;
 }
 
-function NavItem({
+export default function NavItem({
   name,
   handleActiveNavbarItem,
   isMobile = false,
@@ -40,5 +40,3 @@ function NavItem({
     );
   return <>{display()}</>;
 }
-
-export default NavItem;

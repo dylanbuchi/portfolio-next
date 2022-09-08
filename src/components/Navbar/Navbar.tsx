@@ -4,7 +4,7 @@ import { useState } from 'react';
 import MobileMenuButton from '../MobileMenuButton';
 import NavItemList from './NavItemList';
 
-function NavBar() {
+export default function NavBar() {
   const [activeNavbarItem, setActiveNavbarItem] = useState('Home');
 
   const handleActiveNavbarItem = (name: string) => {
@@ -49,4 +49,3 @@ function NavBar() {
     </Disclosure>
   );
 }
-export default NavBar;

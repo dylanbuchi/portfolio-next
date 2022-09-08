@@ -6,7 +6,7 @@ interface NavItemProps {
   activeNavbarItem: string;
 }
 
-function NavItemList({
+export default function NavItemList({
   handleActiveNavbarItem,
   activeNavbarItem,
   isMobile = false,
@@ -37,5 +37,3 @@ function NavItemList({
 
   return <>{display()}</>;
 }
-
-export default NavItemList;
