@@ -1,3 +1,7 @@
+import {
+  navItemActiveStyle,
+  navItemNames,
+} from '../../global/Navbar/navbar-items';
 import NavItem from './NavItem';
 
 interface NavItemProps {
@@ -11,17 +15,6 @@ export default function NavItemList({
   activeNavbarItem,
   isMobile = false,
 }: NavItemProps) {
-  const activeStyle =
-    'bg-gray-900 text-gray-100 cursor-default pointer-events-none';
-
-  const navItemNames = new Set<string>([
-    'Home',
-    'Projects',
-    'Certificates',
-    'About me',
-    'Contact',
-  ]);
-
   const display = () =>
     [...navItemNames].map((name) => (
       <NavItem
@@ -30,7 +23,7 @@ export default function NavItemList({
         name={name}
         handleActiveNavbarItem={() => handleActiveNavbarItem(name)}
         className={`px-3 py-2 rounded-md text-sm font-medium ${
-          name === activeNavbarItem ? activeStyle : ''
+          name === activeNavbarItem ? navItemActiveStyle : ''
         }`}
       />
     ));
