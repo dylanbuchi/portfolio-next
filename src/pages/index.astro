@@ -1,5 +1,11 @@
 ---
+import Navbar from '../components/Navbar/Navbar';
 import Layout from '../layouts/Layout.astro';
+import '../styles/main.css';
+
+const smallDevice = ' (max-width: 640px)';
 ---
 
-<Layout />
+<Layout>
+  <Navbar client:visible />
+</Layout>
