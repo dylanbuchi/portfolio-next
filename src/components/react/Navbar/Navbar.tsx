@@ -1,7 +1,8 @@
 import { Disclosure } from '@headlessui/react';
 import { useState } from 'react';
 
-import MobileMenuButton from '../MobileMenuButton';
+import MobileMenuButton from '../Buttons/MobileMenuButton';
+import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
 import NavItemList from './NavItemList';
 
 export default function NavBar() {
@@ -11,20 +12,23 @@ export default function NavBar() {
     setActiveNavbarItem(name);
   };
 
-  const display = () => {};
-
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 min-w-[250px]">
       {({ open }) => (
         <>
           <div className="max-w-7xl flex justify-between px-6 sm:px-6 lg:px-8">
-            <div className="font-pacifico text-white flex items-center">
+            <div className="font-pacifico text-white flex items-center mr-auto">
               <p className="text-2xl tracking-wide">Buchi</p>
             </div>
+
+            <div className="flex items-center">
+              <ToggleDarkModeToggle />
+            </div>
+
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 items-center">
                     <NavItemList
                       handleActiveNavbarItem={handleActiveNavbarItem}
                       activeNavbarItem={activeNavbarItem}
@@ -32,11 +36,12 @@ export default function NavBar() {
                   </div>
                 </div>
               </div>
-              <div className="-mr-2 flex sm:hidden">
+              <div className="mr-1 flex sm:hidden">
                 <MobileMenuButton isOpen={open} />
               </div>
             </div>
           </div>
+
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 text-center">
               <NavItemList
