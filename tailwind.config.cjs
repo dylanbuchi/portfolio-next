@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'page-404': "url('./src/assets/images/pages/404/404-background.jpg')",
+        'page-404': "url('/src/assets/images/pages/404/404-background.jpg')",
       },
       fontFamily: {
         pacifico: ['Pacifico, cursive'],
