@@ -7,4 +7,4 @@ export const navItemNames = new Set<string>([
 ]);
 
 export const navItemActiveStyle =
-  'bg-gray-900 text-gray-100 cursor-default pointer-events-none';
+  'bg-grayDarker text-whiter cursor-default pointer-events-none';

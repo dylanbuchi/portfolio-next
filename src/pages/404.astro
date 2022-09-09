@@ -1,15 +1,13 @@
 ---
 import FullLayout from '../layouts/FullLayout.astro';
-
 import '../styles/main.css';
 
 const pageNotFoundStr = ' Page not found';
 const number404Str = '404';
 
+const backHomeStr = 'Go back Home';
 const tryAgainMessage =
   'Please check the URL in the address bar and try again.';
-
-const backHomeStr = 'Go back Home';
 ---
 
 <FullLayout
@@ -24,26 +22,26 @@ const backHomeStr = 'Go back Home';
         <div class="sm:ml-6 flex flex-col justify-center items-center">
           <p
             set:text={number404Str}
-            class="text-4xl font-extrabold text-gray-100 sm:hidden mb-4"
+            class="text-4xl font-extrabold text-white sm:hidden mb-4"
           >
           </p>
 
           <div
-            class="md:bg-gray-900 md:bg-opacity-70 sm:pl-6 md:p-10 md:rounded"
+            class="md:bg-grayDarker md:bg-opacity-70 sm:pl-6 md:p-10 md:rounded"
           >
             <h1
               set:text={pageNotFoundStr}
-              class="text-4xl font-extrabold text-gray-100 tracking-tight sm:text-5xl text-center sm:text-left"
+              class="text-4xl font-extrabold text-white tracking-tight sm:text-5xl text-center sm:text-left"
             >
               <span set:text={number404Str} class="hidden sm:inline sm:mr-5"
               ></span>
             </h1>
             <div
-              class="bg-gray-900 bg-opacity-70 rounded md:bg-opacity-0 text-center"
+              class="bg-grayDarker bg-opacity-70 rounded md:bg-opacity-0 text-center"
             >
               <p
                 set:text={tryAgainMessage}
-                class="mt-4 text-base text-gray-300 p-4"
+                class="mt-4 text-base text-white p-4"
               >
               </p>
             </div>
@@ -52,7 +50,7 @@ const backHomeStr = 'Go back Home';
             <a
               set:text={backHomeStr}
               href="/"
-              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-300 bg-gray-900 bg-opacity-90 hover:bg-opacity-100 hover:text-gray-100"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-grayDarker bg-opacity-90 hover:bg-opacity-100 hover:text-whiter"
             >
             </a>
           </div>

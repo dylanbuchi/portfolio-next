@@ -13,12 +13,12 @@ export default function NavBar() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 min-w-[250px]">
+    <Disclosure as="nav" className="bg-grayDark min-w-[250px]">
       {({ open }) => (
         <>
           <div className="max-w-7xl flex justify-between px-6 sm:px-6 lg:px-8">
             <div className="font-pacifico text-white flex items-center mr-auto">
-              <p className="text-2xl tracking-wide">Buchi</p>
+              <p className="text-2xl tracking-wide text-white">Buchi</p>
             </div>
 
             <div className="flex items-center">
