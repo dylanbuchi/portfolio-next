@@ -1,13 +1,17 @@
 ---
 import MainHead from '../components/astro/html/MainHead.astro';
+
+export interface Props {
+  headTitle: string;
+  headDescription?: string;
+}
+
+const { headTitle, headDescription = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <MainHead
-    title="Dylan Buchi: Portfolio"
-    description="The personal portfolio of Dylan Buchi"
-  />
+  <MainHead title={headTitle} description={headDescription} />
   <body>
     <slot />
   </body>
