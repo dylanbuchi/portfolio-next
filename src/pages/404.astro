@@ -1,48 +1,63 @@
 ---
-import MainHead from '../components/astro/html/MainHead.astro';
+import FullLayout from '../layouts/FullLayout.astro';
+
 import '../styles/main.css';
+
+const pageNotFoundStr = ' Page not found';
+const number404Str = '404';
+
+const tryAgainMessage =
+  'Please check the URL in the address bar and try again.';
+
+const backHomeStr = 'Go back Home';
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="h-full">
-  <MainHead title="Page Not Found!" />
-  <body class="h-full">
-    <div
-      class="bg-page-404 bg-cover bg-no-repeat bg-center min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8"
-    >
-      <div class="max-w-max mx-auto">
-        <main class="flex flex-col sm:flex-row justify-center items-center">
-          <div class="sm:ml-6 flex flex-col justify-center items-center">
-            <p class="text-4xl font-extrabold text-gray-100 sm:hidden mb-4">
-              404
-            </p>
-            <div
-              class="md:bg-gray-900 md:bg-opacity-70 sm:border-l md:border-none sm:border-gray-200 sm:pl-6 md:p-10 md:rounded"
+<FullLayout
+  headTitle={pageNotFoundStr}
+  headDescription={`Error ${number404Str}`}
+>
+  <div
+    class="bg-page-404 bg-cover bg-no-repeat bg-center min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8"
+  >
+    <div class="max-w-max mx-auto">
+      <main class="flex flex-col sm:flex-row justify-center items-center">
+        <div class="sm:ml-6 flex flex-col justify-center items-center">
+          <p
+            set:text={number404Str}
+            class="text-4xl font-extrabold text-gray-100 sm:hidden mb-4"
+          >
+          </p>
+
+          <div
+            class="md:bg-gray-900 md:bg-opacity-70 sm:pl-6 md:p-10 md:rounded"
+          >
+            <h1
+              set:text={pageNotFoundStr}
+              class="text-4xl font-extrabold text-gray-100 tracking-tight sm:text-5xl text-center sm:text-left"
             >
-              <h1
-                class="text-4xl font-extrabold text-gray-100 tracking-tight sm:text-5xl text-center sm:text-left"
+              <span set:text={number404Str} class="hidden sm:inline sm:mr-5"
+              ></span>
+            </h1>
+            <div
+              class="bg-gray-900 bg-opacity-70 rounded md:bg-opacity-0 text-center"
+            >
+              <p
+                set:text={tryAgainMessage}
+                class="mt-4 text-base text-gray-300 p-4"
               >
-                <span class="hidden md:inline">404</span> Page not found <span
-                  class="hidden sm:inline md:hidden">404</span
-                >
-              </h1>
-              <div class="bg-gray-900 bg-opacity-70 rounded md:bg-opacity-0">
-                <p class="mt-4 text-base text-gray-300 sm:p-3 p-2">
-                  Please check the URL in the address bar and try again.
-                </p>
-              </div>
-            </div>
-            <div class="mt-6">
-              <a
-                href="/"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-300 bg-gray-900 bg-opacity-90 hover:bg-opacity-100 hover:text-gray-100"
-              >
-                Go back home
-              </a>
+              </p>
             </div>
           </div>
-        </main>
-      </div>
+          <div class="mt-6">
+            <a
+              set:text={backHomeStr}
+              href="/"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-gray-300 bg-gray-900 bg-opacity-90 hover:bg-opacity-100 hover:text-gray-100"
+            >
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
-  </body>
-</html>
+  </div>
+</FullLayout>
