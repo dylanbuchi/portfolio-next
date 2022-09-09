@@ -1,5 +1,5 @@
 import { Disclosure } from '@headlessui/react';
-import setClassNames from '../../utilities/functions';
+import setClassNames from '../../../utilities/functions';
 
 interface NavItemProps {
   name: string;

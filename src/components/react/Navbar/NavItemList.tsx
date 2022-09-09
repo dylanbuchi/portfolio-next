@@ -1,7 +1,7 @@
 import {
   navItemActiveStyle,
   navItemNames,
-} from '../../global/Navbar/navbar-items';
+} from '../../../global/Navbar/navbar-items';
 import NavItem from './NavItem';
 
 interface NavItemProps {

@@ -11,6 +11,8 @@ export default function NavBar() {
     setActiveNavbarItem(name);
   };
 
+  const display = () => {};
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (

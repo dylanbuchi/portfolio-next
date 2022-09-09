@@ -1,11 +1,12 @@
 ---
-import Navbar from '../components/Navbar/Navbar';
+import Divider from '../components/astro/Divider.astro';
+import Navbar from '../components/react/Navbar/Navbar';
 import Layout from '../layouts/Layout.astro';
 import '../styles/main.css';
 
-const smallDevice = ' (max-width: 640px)';
+const smallDevice = '(max-width: 640px)';
 ---
 
 <Layout>
-  <Navbar client:visible />
+  <Navbar client:load />
 </Layout>
