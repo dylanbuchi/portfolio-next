@@ -1,12 +1,15 @@
 ---
-import Divider from '../components/astro/Divider.astro';
-import Navbar from '../components/react/Navbar/Navbar';
-import Layout from '../layouts/Layout.astro';
 import '../styles/main.css';
 
+import Navbar from '../components/react/Navbar/Navbar';
+import Layout from '../layouts/Layout.astro';
+
 const smallDevice = '(max-width: 640px)';
+
+const title = 'Dylan Buchi: Portfolio';
+const description = 'The personal portfolio of Dylan Buchi';
 ---
 
-<Layout>
+<Layout headTitle={title} headDescription={description}>
   <Navbar client:load />
 </Layout>
