@@ -16,7 +16,8 @@ export default function NavItem({
   className = '',
   href = '/#',
 }: NavItemProps) {
-  const defaultStyle = 'text-white hover:bg-grayDarker hover:text-whiter';
+  const defaultStyle =
+    'text-white dark:hover:bg-gray-600 hover:text-whiter hover:bg-teal-600';
   const mobileStyle = `${defaultStyle} block`;
 
   const display = () =>

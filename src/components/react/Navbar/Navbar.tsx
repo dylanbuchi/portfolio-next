@@ -1,5 +1,7 @@
 import { Disclosure } from '@headlessui/react';
+
 import { useState } from 'react';
+import useIsComponentLoaded from '../../../utilities/hooks/useIsComponentLoaded';
 
 import MobileMenuButton from '../Buttons/MobileMenuButton';
 import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
@@ -7,13 +9,14 @@ import NavItemList from './NavItemList';
 
 export default function NavBar() {
   const [activeNavbarItem, setActiveNavbarItem] = useState('Home');
+  const isLoaded = useIsComponentLoaded();
 
   const handleActiveNavbarItem = (name: string) => {
     setActiveNavbarItem(name);
   };
 
   return (
-    <Disclosure as="nav" className="bg-grayDark min-w-[250px]">
+    <Disclosure as="nav" className="bg-teal-900 min-w-[250px] dark:bg-greyDark">
       {({ open }) => (
         <>
           <div className="max-w-7xl flex justify-between px-6 sm:px-6 lg:px-8">
@@ -22,7 +25,7 @@ export default function NavBar() {
             </div>
 
             <div className="flex items-center">
-              <ToggleDarkModeToggle />
+              {isLoaded && <ToggleDarkModeToggle />}
             </div>
 
             <div className="flex items-center justify-between h-16">

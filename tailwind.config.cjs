@@ -9,9 +9,9 @@ module.exports = {
         white: '#e5e7eb',
         whiter: '#fff',
 
-        gray: '#d1d5db',
-        grayDark: '#1f2937',
-        grayDarker: '#111827',
+        grey: '#d1d5db',
+        greyDark: '#1f2937',
+        greyDarker: '#111827',
       },
 
       backgroundImage: {
