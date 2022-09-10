@@ -1,8 +1,8 @@
 export const navItemNames = new Set<string>([
   'Home',
+  'About me',
   'Projects',
   'Certificates',
-  'About me',
   'Contact',
 ]);
 
