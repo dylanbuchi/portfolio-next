@@ -32,9 +32,9 @@ export default function ToggleDarkModeToggle() {
       type="button"
       className={`${setClassNames(
         theme === DARK_THEME
-          ? 'bg-grey border-greyDark dark:focus:ring-white'
-          : 'bg-teal-700  border-teal-900',
-      )} relative inline-flex flex-shrink-0 h-7 w-[3.53rem] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 mr-4 sm:mr-0 focus:ring-greyDark`}
+          ? 'bg-grey border-greyDark dark:focus:ring-whiter'
+          : 'bg-teal-700 border-teal-900',
+      )} relative inline-flex flex-shrink-0 h-7 w-[3.5rem] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 mr-4 sm:mr-0 focus:ring-greyDark`}
       role="switch"
       aria-checked="false"
     >
