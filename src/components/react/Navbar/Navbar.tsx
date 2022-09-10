@@ -23,11 +23,9 @@ export default function NavBar() {
             <div className="font-pacifico text-white flex items-center mr-auto">
               <p className="text-2xl tracking-wide text-white">Buchi</p>
             </div>
-
             <div className="flex items-center">
               {isLoaded && <ToggleDarkModeToggle />}
             </div>
-
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <div className="hidden sm:block sm:ml-6">
@@ -44,7 +42,6 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 text-center">
               <NavItemList
