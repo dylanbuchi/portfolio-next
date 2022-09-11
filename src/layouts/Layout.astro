@@ -12,7 +12,7 @@ const { headTitle, headDescription = '' } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <MainHead title={headTitle} description={headDescription} />
-  <body>
+  <body class="dark:bg-greyDarker bg-white dark:text-white">
     <slot />
   </body>
 </html>
