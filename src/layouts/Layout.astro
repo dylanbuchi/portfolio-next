@@ -1,5 +1,5 @@
 ---
-import MainHead from '../components/astro/html/MainHead.astro';
+import Head from '../components/astro/Head.astro';
 
 export interface Props {
   headTitle: string;
@@ -11,8 +11,10 @@ const { headTitle, headDescription = '' } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-  <MainHead title={headTitle} description={headDescription} />
-  <body class="dark:bg-greyDarker bg-white dark:text-white">
+  <Head title={headTitle} description={headDescription} />
+  <body
+    class="dark:bg-greyDarker bg-white dark:text-white h-full text-zinc-800"
+  >
     <slot />
   </body>
 </html>
