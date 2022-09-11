@@ -18,6 +18,11 @@ export default function NavItemList({
   const display = () =>
     [...navItemNames].map((name) => (
       <NavItem
+        href={
+          name === 'Home'
+            ? '/'
+            : name.trim().toLocaleLowerCase().replace(' ', '-')
+        }
         isMobile={isMobile}
         key={name}
         name={name}
