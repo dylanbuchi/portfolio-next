@@ -7,8 +7,11 @@ import MobileMenuButton from '../Buttons/MobileMenuButton';
 import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
 import NavItemList from './NavItemList';
 
-export default function NavBar() {
-  const [activeNavbarItem, setActiveNavbarItem] = useState('Home');
+interface NavBarProps {
+  activeItem?: string;
+}
+export default function NavBar({ activeItem = 'Home' }: NavBarProps) {
+  const [activeNavbarItem, setActiveNavbarItem] = useState(activeItem);
   const isLoaded = useIsComponentLoaded();
 
   const handleActiveNavbarItem = (name: string) => {
