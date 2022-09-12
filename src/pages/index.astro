@@ -1,15 +1,10 @@
 ---
 import '../styles/main.css';
 
-import Home from '../components/react/Home';
-import Navbar from '../components/react/Navbar/Navbar';
 import Layout from '../layouts/Layout.astro';
 
 const title = 'Dylan Buchi: Portfolio';
 const description = 'The personal portfolio of Dylan Buchi';
 ---
 
-<Layout headTitle={title} headDescription={description}>
-  <Navbar client:visible />
-  <Home />
-</Layout>
+<Layout headTitle={title} headDescription={description} />

@@ -1,5 +1,7 @@
 ---
 import Head from '../components/astro/Head.astro';
+import Home from '../components/react/Home';
+import Navbar from '../components/react/Navbar/Navbar.jsx';
 
 export interface Props {
   headTitle: string;
@@ -15,6 +17,17 @@ const { headTitle, headDescription = '' } = Astro.props;
   <body
     class="dark:bg-greyDarker bg-white dark:text-white h-full text-zinc-800"
   >
+    <Navbar activeItem={headTitle} client:visible />
     <slot />
+
+    <script is:inline>
+      if (localStorage.theme) {
+        localStorage.theme && document.documentElement.classList.add('dark');
+        localStorage.theme === 'light' &&
+          document.documentElement.classList.remove('dark');
+      } else {
+        localStorage.theme = 'light';
+      }
+    </script>
   </body>
 </html>
