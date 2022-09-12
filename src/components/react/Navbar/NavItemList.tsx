@@ -21,7 +21,7 @@ export default function NavItemList({
         href={
           name === 'Home'
             ? '/'
-            : name.trim().toLocaleLowerCase().replace(' ', '-')
+            : `/${name.trim().toLocaleLowerCase().replace(' ', '-')}`
         }
         isMobile={isMobile}
         key={name}
