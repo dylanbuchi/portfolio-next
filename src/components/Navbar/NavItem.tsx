@@ -23,12 +23,22 @@ const NavItem = ({
 
   const display = () =>
     isMobile ? (
-      <Disclosure.Button onClick={handleActiveNavbarItem} as={Link} href={href}>
-        <a className={setClassNames(mobileStyle, className)}>{name}</a>
+      <Disclosure.Button as={Link} href={href}>
+        <a
+          onClick={handleActiveNavbarItem}
+          className={setClassNames(mobileStyle, className)}
+        >
+          {name}
+        </a>
       </Disclosure.Button>
     ) : (
-      <Link onClick={handleActiveNavbarItem} href={href}>
-        <a className={setClassNames(defaultStyle, className)}>{name}</a>
+      <Link href={href}>
+        <a
+          onClick={handleActiveNavbarItem}
+          className={setClassNames(defaultStyle, className)}
+        >
+          {name}
+        </a>
       </Link>
     );
 
