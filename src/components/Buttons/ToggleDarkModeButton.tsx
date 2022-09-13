@@ -5,11 +5,11 @@ import {
   DARK_THEME,
   LIGHT_THEME,
   LOCAL_STORAGE_THEME_KEY,
-} from '../../../global/ToggleDarkModeButton/constants';
+} from '../../global/constants';
 
-import setClassNames from '../../../utilities/functions';
+import setClassNames from '../../utilities/functions';
 
-export default function ToggleDarkModeToggle() {
+const ToggleDarkModeToggle = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem(LOCAL_STORAGE_THEME_KEY) ?? LIGHT_THEME,
   );
@@ -60,4 +60,6 @@ export default function ToggleDarkModeToggle() {
       </span>
     </button>
   );
-}
+};
+
+export default ToggleDarkModeToggle;

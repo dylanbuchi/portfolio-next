@@ -17,9 +17,16 @@ export const SOCIAL_LINKS: Record<string, SocialLinkProps> = {
     brandColor: '#333',
     website: 'https://github.com',
   },
+
   twitter: {
     name: 'Twitter',
     brandColor: '#1da1f2',
     website: 'https://twitter.com',
   },
 };
+
+// DARK MODE
+export const DARK_THEME = 'dark';
+export const LIGHT_THEME = 'light';
+
+export const LOCAL_STORAGE_THEME_KEY = 'theme';

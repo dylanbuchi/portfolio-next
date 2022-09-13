@@ -1,7 +1,3 @@
-import {
-  navItemActiveStyle,
-  navItemNames,
-} from '../../../global/Navbar/navbar-items';
 import NavItem from './NavItem';
 
 interface NavItemProps {
@@ -10,13 +6,24 @@ interface NavItemProps {
   activeNavbarItem: string;
 }
 
-export default function NavItemList({
+const NavItemList = ({
   handleActiveNavbarItem,
   activeNavbarItem,
   isMobile = false,
-}: NavItemProps) {
+}: NavItemProps) => {
+  const navItemNames = new Set<string>([
+    'Home',
+    'About me',
+    'Projects',
+    'Certificates',
+    'Contact',
+  ]);
+
+  const navItemActiveStyle =
+    'dark:bg-greyDarker bg-teal-700 text-whiter cursor-default pointer-events-none';
+
   const display = () =>
-    [...navItemNames].map((name) => (
+    [...Array.from(navItemNames)].map((name) => (
       <NavItem
         href={
           name === 'Home'
@@ -36,4 +43,6 @@ export default function NavItemList({
     ));
 
   return <>{display()}</>;
-}
+};
+
+export default NavItemList;

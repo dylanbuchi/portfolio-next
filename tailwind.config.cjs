@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -43,7 +45,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        'page-404': "url('/src/assets/images/pages/404/404-background.jpg')",
+        page404: "url('../assets/images/pages/404/404-background.jpg')",
       },
       fontFamily: {
         pacifico: ['Pacifico, cursive'],

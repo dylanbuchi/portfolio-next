@@ -7,11 +7,11 @@ interface SocialLinkProps {
   classes?: string;
 }
 
-export default function SocialLink({
+const SocialLink = ({
   renderIcon,
   href = '/#',
   classes = '',
-}: SocialLinkProps) {
+}: SocialLinkProps) => {
   return (
     <a
       target="_blank"
@@ -22,4 +22,6 @@ export default function SocialLink({
       {renderIcon()}
     </a>
   );
-}
+};
+
+export default SocialLink;

@@ -1,9 +1,9 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa/index';
-import { SOCIAL_LINKS, USERNAME } from '../../global/socials/constants';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { SOCIAL_LINKS, USERNAME } from '../global/constants';
 
 import SocialLink from './SocialLink';
 
-export default function Home() {
+const Home = () => {
   const helloMsg = "Hi, I'm ";
 
   return (
@@ -42,4 +42,5 @@ export default function Home() {
       <div className="landscape:hidden lg:landscape:block fixed bottom-0 bg-teal-900 w-screen p-10 justify-center items-center dark:bg-greyDark" />
     </div>
   );
-}
+};
+export default Home;

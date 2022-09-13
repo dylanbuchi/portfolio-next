@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react';
 
 import { useState } from 'react';
-import useIsComponentLoaded from '../../../utilities/hooks/useIsComponentLoaded';
+import useIsComponentLoaded from '../../utilities/hooks/useIsComponentLoaded';
 
 import MobileMenuButton from '../Buttons/MobileMenuButton';
 import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
@@ -10,7 +10,8 @@ import NavItemList from './NavItemList';
 interface NavBarProps {
   activeItem?: string;
 }
-export default function NavBar({ activeItem = 'Home' }: NavBarProps) {
+
+const NavBar = ({ activeItem = 'Home' }: NavBarProps) => {
   const [activeNavbarItem, setActiveNavbarItem] = useState(activeItem);
   const isLoaded = useIsComponentLoaded();
 
@@ -58,4 +59,6 @@ export default function NavBar({ activeItem = 'Home' }: NavBarProps) {
       )}
     </Disclosure>
   );
-}
+};
+
+export default NavBar;

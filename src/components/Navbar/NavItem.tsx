@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react';
-import setClassNames from '../../../utilities/functions';
+import Link from 'next/link';
+import setClassNames from '../../utilities/functions';
 
 interface NavItemProps {
   name: string;
@@ -9,35 +10,29 @@ interface NavItemProps {
   isMobile?: boolean;
 }
 
-export default function NavItem({
+const NavItem = ({
   name,
   handleActiveNavbarItem,
   isMobile = false,
   className = '',
   href = '/#',
-}: NavItemProps) {
+}: NavItemProps) => {
   const defaultStyle =
     'text-white dark:hover:bg-gray-600 hover:text-whiter hover:bg-teal-600';
   const mobileStyle = `${defaultStyle} block`;
 
   const display = () =>
     isMobile ? (
-      <Disclosure.Button
-        onClick={handleActiveNavbarItem}
-        as="a"
-        href={href}
-        className={setClassNames(mobileStyle, className)}
-      >
-        {name}
+      <Disclosure.Button onClick={handleActiveNavbarItem} as={Link} href={href}>
+        <a className={setClassNames(mobileStyle, className)}>{name}</a>
       </Disclosure.Button>
     ) : (
-      <a
-        onClick={handleActiveNavbarItem}
-        href={href}
-        className={setClassNames(defaultStyle, className)}
-      >
-        {name}
-      </a>
+      <Link onClick={handleActiveNavbarItem} href={href}>
+        <a className={setClassNames(defaultStyle, className)}>{name}</a>
+      </Link>
     );
+
   return <>{display()}</>;
-}
+};
+
+export default NavItem;

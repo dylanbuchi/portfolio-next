@@ -6,40 +6,13 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'airbnb',
-    'airbnb-typescript',
     'prettier',
   ],
+
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
+
   plugins: ['react', '@typescript-eslint'],
-  rules: {
-    'react/require-default-props': 'off',
-    '@typescript-eslint/no-unused-vars': 1,
-    'no-underscore-dangle': 'off',
-    'react/prop-types': 1,
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'react/react-in-jsx-scope': 'off',
-    camelcase: 'error',
-    'spaced-comment': 'error',
-    quotes: [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: false },
-    ],
-    'import/no-unresolved': 'off',
-    'import/extensions': 'off',
-    'no-duplicate-imports': 'error',
-    'no-unused-vars': 1,
-    'react/jsx-filename-extension': 'off',
-    'react/function-component-definition': [2, {}],
-  },
 };
