@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react';
 import { useRouter } from 'next/router';
-
 import { useState } from 'react';
+
 import useIsComponentLoaded from '../../utilities/hooks/useIsComponentLoaded';
 
 import MobileMenuButton from '../Buttons/MobileMenuButton';
@@ -9,9 +9,13 @@ import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
 import NavItemList from './NavItemList';
 
 const NavBar = () => {
-  const [activeNavbarItem, setActiveNavbarItem] = useState('/');
-  const isLoaded = useIsComponentLoaded();
   const router = useRouter();
+
+  const [activeNavbarItem, setActiveNavbarItem] = useState(() => {
+    return router.asPath;
+  });
+
+  const isLoaded = useIsComponentLoaded();
 
   const handleActiveNavbarItem = (route: string) => {
     setActiveNavbarItem(route);
