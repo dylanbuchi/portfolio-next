@@ -2,8 +2,6 @@ import { Disclosure } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import useIsComponentLoaded from '../../utilities/hooks/useIsComponentLoaded';
-
 import MobileMenuButton from '../Buttons/MobileMenuButton';
 import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
 import NavItemList from './NavItemList';
@@ -14,8 +12,6 @@ const NavBar = () => {
   const [activeNavbarItem, setActiveNavbarItem] = useState(() => {
     return router.asPath;
   });
-
-  const isLoaded = useIsComponentLoaded();
 
   const handleActiveNavbarItem = (route: string) => {
     setActiveNavbarItem(route);
@@ -36,7 +32,7 @@ const NavBar = () => {
                 <p className="text-2xl tracking-wide text-white">Buchi</p>
               </div>
               <div className="flex items-center">
-                {isLoaded && <ToggleDarkModeToggle />}
+                <ToggleDarkModeToggle />
               </div>
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
