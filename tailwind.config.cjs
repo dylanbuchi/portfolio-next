@@ -45,7 +45,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        page404: "url('../assets/images/pages/404/404-background.jpg')",
+        page404: "url('/assets/images/pages/404/404-background.jpg')",
       },
       fontFamily: {
         pacifico: ['Pacifico, cursive'],
