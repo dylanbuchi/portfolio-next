@@ -1,27 +1,38 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/outline/index';
+import { LOCAL_STORAGE__THEME_KEY } from 'constants/local_storage';
 import { useEffect, useState } from 'react';
 
 import {
   DARK_THEME,
+  LightDarkTheme,
   LIGHT_THEME,
-  LOCAL_STORAGE_THEME_KEY,
-} from '../../global/constants';
+} from '../../constants/dark_mode';
 
 import setClassNames from '../../utilities/functions';
 
 const ToggleDarkModeToggle = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem(LOCAL_STORAGE_THEME_KEY) ?? LIGHT_THEME,
-  );
+  const [theme, setTheme] = useState<LightDarkTheme>(() => {
+    const isSystemInDarkMode = matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+
+    const item = localStorage.getItem(LOCAL_STORAGE__THEME_KEY);
+
+    if (item === null) {
+      return isSystemInDarkMode ? DARK_THEME : LIGHT_THEME;
+    }
+
+    return item as LightDarkTheme;
+  });
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+    localStorage.setItem(LOCAL_STORAGE__THEME_KEY, theme);
 
-    if (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) === LIGHT_THEME) {
-      document.documentElement.classList.remove(DARK_THEME);
-    } else {
-      document.documentElement.classList.add(DARK_THEME);
-    }
+    [DARK_THEME, LIGHT_THEME].forEach((item) =>
+      document.documentElement.classList.remove(item),
+    );
+
+    document.documentElement.classList.add(theme);
   }, [theme]);
 
   return (
