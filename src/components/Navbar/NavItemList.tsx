@@ -20,7 +20,7 @@ const NavItemList = ({
   ]);
 
   const navItemActiveStyle =
-    'dark:bg-greyDarker bg-teal-700 text-whiter cursor-default pointer-events-none';
+    'dark:bg-primary_10 bg-primary_20 text-white cursor-default pointer-events-none';
 
   const display = () =>
     Array.from(navItemNamesAndRoutes).map(([name, route]) => {

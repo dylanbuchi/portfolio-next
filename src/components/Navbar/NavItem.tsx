@@ -18,7 +18,7 @@ const NavItem = ({
   href = '/#',
 }: NavItemProps) => {
   const defaultStyle =
-    'text-white dark:hover:bg-gray-600 hover:text-whiter hover:bg-teal-600';
+    'dark:hover:bg-primary_30 hover:text-white dark:hover:text-white hover:bg-primary_30';
   const mobileStyle = `${defaultStyle} block`;
 
   const display = () =>

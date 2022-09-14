@@ -11,4 +11,10 @@
     font-family: Inter;
     overflow: hidden;
   }
+
+  html,
+  body,
+  #__next {
+    min-height: 100vh;
+  }
 }

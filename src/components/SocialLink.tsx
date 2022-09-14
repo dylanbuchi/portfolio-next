@@ -17,7 +17,7 @@ const SocialLink = ({
       target="_blank"
       rel="noopener noreferrer"
       href={href}
-      className={`bg-[#bed6d6] dark:bg-[#1c5e5e] shadow-sm dark:shadow-none shadow-greyDarker p-3 rounded text-3xl cursor-pointer hover:shadow-none hover:bg-white transition hover:scale-150 dark:shadow-white dark:hover:bg-gray-900 ${classes}`}
+      className={`bg-[#dae6f2] dark:bg-[#254d77] shadow-sm dark:shadow-none shadow-primary_10 p-3 rounded sm:text-3xl cursor-pointer hover:shadow-none hover:bg-transparent dark:hover:bg-transparent transition hover:scale-150 ${classes} mr-8 text-xl sm:m-0`}
     >
       {renderIcon()}
     </a>

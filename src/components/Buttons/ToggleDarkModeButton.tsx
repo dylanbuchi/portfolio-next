@@ -37,9 +37,9 @@ const ToggleDarkModeToggle = () => {
       type="button"
       className={`${setClassNames(
         theme === DARK_THEME
-          ? 'bg-grey border-greyDark dark:focus:ring-whiter'
-          : 'bg-teal-700 border-teal-900 focus:ring-whiter',
-      )} relative inline-flex flex-shrink-0 h-7 w-[3.5rem] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 mr-4 sm:mr-0 focus:ring-greyDark`}
+          ? 'bg-primary_90 border-primary_10 dark:focus:ring-white_gray'
+          : 'bg-primary_90 border-primary_30 focus:ring-primary_10',
+      )} relative inline-flex flex-shrink-0 h-7 w-[3.5rem] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 mr-4 sm:mr-0 focus:ring-primary_10`}
       role="switch"
       aria-checked="false"
     >
@@ -48,8 +48,8 @@ const ToggleDarkModeToggle = () => {
         aria-hidden="true"
         className={`${setClassNames(
           theme === DARK_THEME
-            ? 'translate-x-[1.8rem] bg-greyDarker text-white p-[0.3rem]'
-            : 'translate-x-[0rem] bg-white p-1 text-greyDarker',
+            ? 'translate-x-[1.8rem] bg-primary_10 text-white_gray p-[0.3rem]'
+            : 'translate-x-[0rem] bg-white_gray p-1 text-black',
         )} pointer-events-none inline-block rounded-full transform transition ease-in-out duration-20 h-[1.5rem] w-[1.5rem]`}
       >
         {theme === DARK_THEME ? (

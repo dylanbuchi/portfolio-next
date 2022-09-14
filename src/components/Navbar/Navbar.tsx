@@ -23,13 +23,13 @@ const NavBar = () => {
     (itsNot404Page && (
       <Disclosure
         as="nav"
-        className="bg-teal-900 min-w-[250px] dark:bg-greyDark"
+        className="bg-primary_40 min-w-[250px] dark:bg-primary_20 text-white_gray"
       >
         {({ open }) => (
           <>
             <div className="max-w-7xl flex justify-between px-6 sm:px-6 lg:px-8">
-              <div className="font-pacifico text-white flex items-center mr-auto">
-                <p className="text-2xl tracking-wide text-white">Buchi</p>
+              <div className="font-pacifico flex items-center mr-auto">
+                <p className="text-2xl tracking-wide ">Buchi</p>
               </div>
               <div className="flex items-center">
                 <ToggleDarkModeToggle />
