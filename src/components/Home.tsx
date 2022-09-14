@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { SOCIAL_LINKS, USERNAME } from '../global/constants';
+import { SOCIAL_LINKS, USERNAME } from '../constants/socials';
 
 import SocialLink from './SocialLink';
 
