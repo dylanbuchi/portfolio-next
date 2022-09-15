@@ -23,18 +23,18 @@ const NavBar = () => {
     (itsNot404Page && (
       <Disclosure
         as="nav"
-        className="min-w-[250px] bg-primary_40 text-white_gray dark:bg-primary_20"
+        className="h-fit min-w-[250px] bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
       >
         {({ open }) => (
           <>
-            <div className="flex max-w-7xl justify-between px-6 sm:px-6 lg:px-8">
+            <div className="flex max-w-7xl justify-between px-2 sm:px-6 lg:px-8">
               <div className="mr-auto flex items-center font-pacifico">
                 <p className="text-2xl tracking-wide ">Buchi</p>
               </div>
               <div className="flex items-center">
                 <ToggleDarkModeToggle />
               </div>
-              <div className="flex h-16 items-center justify-between">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex items-center space-x-4">
@@ -45,7 +45,7 @@ const NavBar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mr-1 flex sm:hidden">
+                <div className="ml-3 flex sm:hidden">
                   <MobileMenuButton isOpen={open} />
                 </div>
               </div>
