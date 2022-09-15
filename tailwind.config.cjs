@@ -42,8 +42,8 @@ module.exports = {
 
       backgroundImage: {
         page404: "url('/assets/images/pages/404/404-background.jpg')",
-        home: "url('/assets/images/rainbow-vortex.png')",
-        home_dark: "url('/assets/images/rainbow-vortex-dark.png')",
+        home: "url('/assets/images/pages/home/rainbow-vortex.png')",
+        home_dark: "url('/assets/images/pages/home/rainbow-vortex-dark.png')",
       },
       fontFamily: {
         pacifico: ['Pacifico, cursive'],
