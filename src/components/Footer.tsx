@@ -1,15 +1,20 @@
-const Footer = () => {
+import { useRouter } from 'next/router';
+
+function Footer() {
+  const router = useRouter();
+
+  const itsNot404Page = router.pathname !== '/404';
   return (
-    <footer className="mt-auto w-[100%] bg-primary_20 dark:bg-primary_10 ">
-      <div className="pt-12">
+    (itsNot404Page && (
+      <footer className="fixed bottom-0 h-fit w-full bg-primary_30 p-2 dark:bg-[#1a202d] ">
         <div className="min-w[375px] flex max-w-[1945px] items-end justify-center">
-          <p className="mb-4 text-center text-xs text-gray-300 ">
+          <p className="p-3 text-center text-xs text-gray-300 ">
             &copy; 2019 - 2022 <span className="ml-2">Dylan Buchi</span>
           </p>
         </div>
-      </div>
-    </footer>
+      </footer>
+    )) || <></>
   );
-};
+}
 
 export default Footer;
