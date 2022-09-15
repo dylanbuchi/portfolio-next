@@ -9,13 +9,21 @@
 @layer base {
   html {
     font-family: Inter;
+    height: fill-available;
+    height: -webkit-fill-available;
   }
 
-  html,
+  *,
+  *::after,
+  *::before {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
-    height: 100%;
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
   }
-
   .lumos {
     filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg) brightness(1.2);
   }
