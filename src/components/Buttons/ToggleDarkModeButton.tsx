@@ -38,9 +38,9 @@ const ToggleDarkModeToggle = () => {
       type="button"
       className={`${setClassNames(
         theme === DARK_THEME
-          ? 'bg-primary_90 border-primary_10 dark:focus:ring-white_gray'
-          : 'bg-primary_90 border-primary_30 focus:ring-primary_10',
-      )} relative inline-flex flex-shrink-0 h-7 w-[3.5rem] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 mr-4 sm:mr-0 focus:ring-primary_10`}
+          ? 'border-primary_10 bg-primary_90 dark:focus:ring-white_gray'
+          : 'border-primary_30 bg-primary_90 focus:ring-primary_10',
+      )} relative mr-4 inline-flex h-7 w-[3.5rem] flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary_10 sm:mr-0`}
       role="switch"
       aria-checked="false"
     >
@@ -49,9 +49,9 @@ const ToggleDarkModeToggle = () => {
         aria-hidden="true"
         className={`${setClassNames(
           theme === DARK_THEME
-            ? 'translate-x-[1.8rem] bg-primary_10 text-white_gray p-[0.3rem]'
+            ? 'translate-x-[1.8rem] bg-primary_10 p-[0.3rem] text-white_gray'
             : 'translate-x-[0rem] bg-white_gray p-1 text-black',
-        )} pointer-events-none inline-block rounded-full transform transition ease-in-out duration-20 h-[1.5rem] w-[1.5rem]`}
+        )} duration-20 pointer-events-none inline-block h-[1.5rem] w-[1.5rem] transform rounded-full transition ease-in-out`}
       >
         {theme === DARK_THEME ? (
           <MoonIcon

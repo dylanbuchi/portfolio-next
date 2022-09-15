@@ -31,7 +31,7 @@ const NavItemList = ({
           key={route}
           name={name}
           handleActiveNavbarItem={() => handleActiveNavbarItem(route)}
-          className={`transition duration-100 px-3 py-2 rounded-md text-sm font-medium ${
+          className={`rounded-md px-3 py-2 text-sm font-medium transition duration-100 ${
             route === activeNavbarItem.toLocaleLowerCase()
               ? navItemActiveStyle
               : ''

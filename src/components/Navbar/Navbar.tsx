@@ -23,21 +23,21 @@ const NavBar = () => {
     (itsNot404Page && (
       <Disclosure
         as="nav"
-        className="bg-primary_40 min-w-[250px] dark:bg-primary_20 text-white_gray"
+        className="min-w-[250px] bg-primary_40 text-white_gray dark:bg-primary_20"
       >
         {({ open }) => (
           <>
-            <div className="max-w-7xl flex justify-between px-6 sm:px-6 lg:px-8">
-              <div className="font-pacifico flex items-center mr-auto">
+            <div className="flex max-w-7xl justify-between px-6 sm:px-6 lg:px-8">
+              <div className="mr-auto flex items-center font-pacifico">
                 <p className="text-2xl tracking-wide ">Buchi</p>
               </div>
               <div className="flex items-center">
                 <ToggleDarkModeToggle />
               </div>
-              <div className="flex items-center justify-between h-16">
+              <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
-                  <div className="hidden sm:block sm:ml-6">
-                    <div className="flex space-x-4 items-center">
+                  <div className="hidden sm:ml-6 sm:block">
+                    <div className="flex items-center space-x-4">
                       <NavItemList
                         handleActiveNavbarItem={handleActiveNavbarItem}
                         activeNavbarItem={activeNavbarItem}
@@ -51,7 +51,7 @@ const NavBar = () => {
               </div>
             </div>
             <Disclosure.Panel className="sm:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 text-center">
+              <div className="space-y-1 px-2 pt-2 pb-3 text-center">
                 <NavItemList
                   handleActiveNavbarItem={handleActiveNavbarItem}
                   activeNavbarItem={activeNavbarItem}
