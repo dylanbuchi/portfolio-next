@@ -20,7 +20,7 @@ const NavItemList = ({
   ]);
 
   const navItemActiveStyle =
-    'dark:bg-primary_10 bg-primary_20 text-white cursor-default pointer-events-none';
+    'dark:bg-primary_10 bg-primary_20 text-white cursor-default pointer-events-none sm:p-2 md:px-3 md:py-2';
 
   const display = () =>
     Array.from(navItemNamesAndRoutes).map(([name, route]) => {
@@ -31,7 +31,7 @@ const NavItemList = ({
           key={route}
           name={name}
           handleActiveNavbarItem={() => handleActiveNavbarItem(route)}
-          className={`rounded-md px-3 py-2 text-sm font-medium transition duration-100 ${
+          className={`rounded-md px-3 py-2 text-sm font-medium transition duration-100 sm:p-2 md:px-3 md:py-2 ${
             route === activeNavbarItem.toLocaleLowerCase()
               ? navItemActiveStyle
               : ''
