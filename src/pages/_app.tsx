@@ -1,6 +1,6 @@
 import Footer from 'components/Footer';
 import NavBar from 'components/Navbar/Navbar';
-import FullPageLayout from 'layouts/FullPageLayout';
+
 import type { AppProps } from 'next/app';
 import useIsComponentLoaded from 'utilities/hooks/useIsComponentLoaded';
 import '../styles/main.css';
