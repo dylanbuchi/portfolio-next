@@ -1,4 +1,5 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/outline/index';
+import { LOCAL_STORAGE__THEME_KEY } from 'constants/storage';
 import { useEffect } from 'react';
 
 import useStorage from 'utilities/hooks/useStorage';
@@ -16,7 +17,7 @@ const ToggleDarkModeToggle = () => {
 
   const [theme, setTheme] = useStorage<LightDarkTheme>(
     'local_storage',
-    LIGHT_THEME,
+    LOCAL_STORAGE__THEME_KEY,
     isSystemInDarkMode ? DARK_THEME : LIGHT_THEME,
   );
 
@@ -26,7 +27,7 @@ const ToggleDarkModeToggle = () => {
     );
 
     document.documentElement.classList.add(theme);
-  }, [theme]);
+  });
 
   return (
     <button
