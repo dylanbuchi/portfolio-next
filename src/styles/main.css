@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -10,6 +9,9 @@
   html {
     font-family: Inter;
     font-size: 100%;
+
+    @apply landscape_max:text-[75%];
+    @apply xl:text-[125%];
   }
 
   *,
@@ -36,11 +38,5 @@
   .devicons:hover::after {
     content: '';
     color: #fdfdfd;
-  }
-
-  @media (orientation: landscape) and (max-width: 916px) {
-    html {
-      font-size: 70%;
-    }
   }
 }
