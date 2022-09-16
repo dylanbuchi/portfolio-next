@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     isLoaded && (
-      <div className="flex h-screen flex-col overflow-hidden bg-home bg-cover text-gray_10 dark:bg-primary_10 dark:bg-home_dark dark:text-white_gray">
+      <div className="full-height flex flex-col overflow-hidden bg-home bg-cover text-gray_10 dark:bg-primary_10 dark:bg-home_dark dark:text-white_gray">
         <NavBar />
         <Component {...pageProps} />
         <Footer />

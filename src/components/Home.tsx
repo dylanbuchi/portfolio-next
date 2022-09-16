@@ -10,7 +10,7 @@ const Home = () => {
     'hover:lumos relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10 h-9 w-9';
 
   return (
-    <div className="mx-10 flex h-full flex-col justify-evenly text-base sm:m-0 sm:items-center">
+    <div className="mx-10 flex h-screen flex-col justify-evenly text-base sm:m-0 sm:items-center">
       <div className="mt-auto">
         <p className="text-2xl tracking-wide">
           {helloMsg}
@@ -19,7 +19,7 @@ const Home = () => {
           </span>
           {' a'}
         </p>
-        <h1 className="text-5xl font-black leading-tight tracking-wide text-gray-800 dark:text-accent_90">
+        <h1 className="text-5xl font-extrabold leading-tight tracking-wide text-gray-800 dark:text-accent_90">
           Full-Stack Developer
         </h1>
         <div className="mt-10 flex w-[75%] justify-between transition-colors sm:w-[40%] lg:w-[43%] landscape:w-[45%]">

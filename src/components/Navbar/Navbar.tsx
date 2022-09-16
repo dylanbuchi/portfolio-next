@@ -23,7 +23,7 @@ const NavBar = () => {
     (itsNot404Page && (
       <Disclosure
         as="nav"
-        className="h-fit min-w-[250px] bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
+        className="h-auto min-w-[250px] bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
       >
         {({ open }) => (
           <>

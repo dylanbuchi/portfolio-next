@@ -9,23 +9,20 @@
   html {
     font-family: Inter;
     font-size: 100%;
+    -webkit-tap-highlight-color: transparent;
 
     @apply landscape_max:text-[75%];
     @apply xl:text-[125%];
   }
 
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+  html,
+  body {
+    height: 100%;
   }
 
-  body {
-    min-height: 100vh;
-    max-width: 100vw;
+  .full-height {
+    position: fixed;
+    inset: 0;
   }
 
   .lumos {
