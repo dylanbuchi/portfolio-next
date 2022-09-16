@@ -1,9 +1,16 @@
+import { MutableRefObject } from 'react';
 import NavItem from './NavItem';
 
 interface NavItemProps {
   handleActiveNavbarItem: (route: string) => void;
   isMobile?: boolean;
   activeNavbarItem: string;
+  closePanel?: (
+    focusableElement?:
+      | HTMLElement
+      | MutableRefObject<HTMLElement | null>
+      | undefined,
+  ) => void;
 }
 
 type Name = string;
@@ -15,6 +22,7 @@ const NavItemList = ({
   handleActiveNavbarItem,
   activeNavbarItem,
   isMobile = false,
+  closePanel,
 }: NavItemProps) => {
   const navItems = new Set<NavItems>([
     ['Home', '/'],
@@ -35,7 +43,10 @@ const NavItemList = ({
           isMobile={isMobile}
           key={route}
           name={name}
-          handleActiveNavbarItem={() => handleActiveNavbarItem(route)}
+          handleActiveNavbarItem={() => {
+            isMobile && closePanel && closePanel();
+            handleActiveNavbarItem(route);
+          }}
           className={`rounded-md px-3 py-2 text-sm font-medium transition duration-100 sm:p-2 md:px-3 md:py-2 ${
             route === activeNavbarItem.toLocaleLowerCase()
               ? navItemActiveStyle

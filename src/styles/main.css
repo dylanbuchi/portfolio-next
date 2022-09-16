@@ -36,6 +36,9 @@
   .devicons {
   }
 
+  .to-add-blur {
+  }
+
   .devicons:hover::after {
     content: '';
     color: #fdfdfd;

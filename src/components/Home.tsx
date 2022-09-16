@@ -1,4 +1,5 @@
 import { Devicon } from 'components/Devicon';
+
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { SOCIAL_LINKS, USERNAME } from '../constants/socials';
 
@@ -10,7 +11,7 @@ const Home = () => {
     'hover:lumos relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10 h-9 w-9';
 
   return (
-    <div className="mx-10 flex h-screen flex-col justify-evenly text-base sm:m-0 sm:items-center">
+    <div className="to-add-blur mx-10 flex h-screen flex-col justify-evenly text-base sm:m-0 sm:items-center">
       <div className="mt-auto">
         <p className="text-2xl tracking-wide">
           {helloMsg}

@@ -45,19 +45,22 @@ const NavBar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="ml-3 flex sm:hidden">
+                <div className={'ml-3 sm:hidden'}>
                   <MobileMenuButton isOpen={open} />
                 </div>
               </div>
             </div>
             <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 px-2 pt-2 pb-3 text-center">
-                <NavItemList
-                  handleActiveNavbarItem={handleActiveNavbarItem}
-                  activeNavbarItem={activeNavbarItem}
-                  isMobile
-                />
-              </div>
+              {({ close }) => (
+                <div className="space-y-1 px-2 pt-2 pb-3 text-center">
+                  <NavItemList
+                    handleActiveNavbarItem={handleActiveNavbarItem}
+                    activeNavbarItem={activeNavbarItem}
+                    isMobile
+                    closePanel={close}
+                  />
+                </div>
+              )}
             </Disclosure.Panel>
           </>
         )}
