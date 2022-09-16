@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        landscape_max: {
+          raw: '(orientation: landscape) and (max-width: 956px)',
+        },
+      },
       colors: {
         white: '#fff',
         white_gray: '#f5f9f7',
