@@ -6,10 +6,12 @@ import SocialLink from './SocialLink';
 
 const Home = () => {
   const helloMsg = "Hi, I'm ";
+  const deviconBoxStyles =
+    'hover:lumos relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10 h-9 w-9';
 
   return (
-    <div className="mx-8 mt-0 flex h-full flex-col justify-evenly text-base sm:m-0 sm:items-center">
-      <div>
+    <div className="mx-10 flex h-full flex-col justify-evenly text-base sm:m-0 sm:items-center">
+      <div className="mt-auto">
         <p className="text-2xl tracking-wide">
           {helloMsg}
           <span className="text-3xl font-bold tracking-wide text-blue-700 dark:text-accent_10">
@@ -20,8 +22,7 @@ const Home = () => {
         <h1 className="text-5xl font-black leading-tight tracking-wide text-gray-800 dark:text-accent_90">
           Full-Stack Developer
         </h1>
-
-        <div className="mt-10 flex w-[75%] justify-between transition-colors sm:w-[40%]">
+        <div className="mt-10 flex w-[75%] justify-between transition-colors sm:w-[40%] lg:w-[43%] landscape:w-[45%]">
           <SocialLink
             href={`${SOCIAL_LINKS.linkedin.website}/in/${USERNAME}`}
             renderIcon={() => <FaLinkedin />}
@@ -39,21 +40,25 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className="sm:w-[100%] lg:w-[50%]">
-        <div className="w-[100%] ">
-          <p className="my-2 text-center text-sm font-medium">Built with:</p>
-          <div className="rounded-xl bg-gradient-to-r from-[#9dadbe] to-primary_40 shadow-sm shadow-primary_10 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary_20 dark:to-primary_10 dark:shadow-none sm:rounded-none lg:rounded-xl">
+      <div className="-mx-10 mt-auto sm:w-[100%] lg:w-[45%]">
+        <div className="w-[100%]">
+          <p className="text-md my-1 ml-10 text-left font-medium text-primary_20 dark:text-gray-200 sm:ml-0 sm:text-center">
+            Built with:
+          </p>
+          <div className="bg-gradient-to-l from-[#ffffff00] to-primary_30 shadow-sm shadow-primary_10 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary_20 dark:to-primary_10 dark:shadow-none sm:rounded-none lg:rounded-xl lg:rounded-b-none">
             <div className="flex justify-evenly py-8 px-4">
-              <div className="hover:lumos relative  h-9 w-9 shrink-0 rounded-full bg-white_gray text-center lg:h-10 lg:w-10">
+              <div
+                className={`${deviconBoxStyles} ml-0 rounded-full bg-white_gray text-center`}
+              >
                 {<Devicon name="nextjs" type="line" />}
               </div>
-              <div className="hover:lumos relative ml-4 h-9 w-9 shrink-0 dark:bg-transparent lg:h-10 lg:w-10">
+              <div className={`${deviconBoxStyles}dark:bg-transparent`}>
                 {<Devicon name="react" />}
               </div>
-              <div className="hover:lumos  relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10">
+              <div className={`${deviconBoxStyles}`}>
                 {<Devicon name="typescript" />}
               </div>
-              <div className="hover:lumos relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10">
+              <div className={`${deviconBoxStyles}`}>
                 {<Devicon name="tailwindcss" type="plain" />}
               </div>
             </div>
