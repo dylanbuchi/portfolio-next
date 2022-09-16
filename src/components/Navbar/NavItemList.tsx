@@ -6,12 +6,17 @@ interface NavItemProps {
   activeNavbarItem: string;
 }
 
+type Name = string;
+type Route = string;
+
+type NavItems = [Name, Route];
+
 const NavItemList = ({
   handleActiveNavbarItem,
   activeNavbarItem,
   isMobile = false,
 }: NavItemProps) => {
-  const navItemNamesAndRoutes = new Set<string[]>([
+  const navItems = new Set<NavItems>([
     ['Home', '/'],
     ['About me', '/about-me'],
     ['Projects', '/projects'],
@@ -23,7 +28,7 @@ const NavItemList = ({
     'dark:bg-primary_10 bg-primary_20 text-white cursor-default pointer-events-none sm:p-2 md:px-3 md:py-2';
 
   const display = () =>
-    Array.from(navItemNamesAndRoutes).map(([name, route]) => {
+    Array.from(navItems).map(([name, route]) => {
       return (
         <NavItem
           href={route}
