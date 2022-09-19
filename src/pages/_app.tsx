@@ -1,6 +1,5 @@
 import Layout from '../layouts/Layout';
 
-import AppContainer from 'containers/AppContainer';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import useIsComponentLoaded from 'utilities/hooks/useIsComponentLoaded';
