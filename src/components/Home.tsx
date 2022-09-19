@@ -43,7 +43,7 @@ const Home = () => {
       </div>
       <div className="-mx-10 mt-auto sm:w-[100%] lg:w-[45%] landscape_max:w-[50%]">
         <div className="w-[100%] ">
-          <p className="text-md my-1 ml-10 text-left font-medium text-primary_20 dark:text-gray-200 sm:ml-0 sm:text-center">
+          <p className="text-md my-1 ml-10 text-left font-medium sm:ml-0 sm:text-center">
             Built with:
           </p>
           <div className="bg-gradient-to-l from-[#ffffff00] to-primary_30 shadow-sm shadow-primary_10 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary_20 dark:to-primary_10 dark:shadow-none sm:rounded-none lg:rounded-xl lg:rounded-b-none landscape_max:flex landscape_max:justify-center landscape_max:rounded-xl landscape_max:rounded-b-none">
