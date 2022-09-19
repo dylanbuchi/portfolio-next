@@ -8,13 +8,13 @@ interface MyHeadProps {
 const MyHead = ({ title, description }: MyHeadProps) => {
   return (
     <Head>
-      <title>{title}</title>
       <meta name="title" property="og:title" content={title} />
       <meta
         name="description"
         property="og:description"
         content={description}
       />
+      <title>{title}</title>
     </Head>
   );
 };
