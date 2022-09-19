@@ -19,11 +19,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           />
           <meta name="author" content="Dylan Buchi" />
         </Head>
-        <AppContainer>
+        <div
+          className={`full-height flex flex-col bg-home bg-cover text-gray_10 dark:bg-primary_10 dark:bg-home_dark dark:text-gray-300`}
+        >
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </AppContainer>
+        </div>
       </>
     )
   );
