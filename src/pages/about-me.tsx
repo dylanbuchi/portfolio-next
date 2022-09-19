@@ -1,10 +1,12 @@
+import MyHead from 'components/MyHead';
+import Container from 'containers/Container';
 import type { NextPage } from 'next';
-import Home from '../components/Home';
 
 const AboutMePage: NextPage = () => {
   return (
     <>
-      <Home></Home>
+      <MyHead title="About me" />
+      <Container></Container>
     </>
   );
 };

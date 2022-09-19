@@ -1,20 +1,30 @@
-import Footer from 'components/Footer';
-import NavBar from 'components/Navbar/Navbar';
+import Layout from '../layouts/Layout';
 
+import AppContainer from 'containers/AppContainer';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import useIsComponentLoaded from 'utilities/hooks/useIsComponentLoaded';
 import '../styles/main.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const isLoaded = useIsComponentLoaded();
-
   return (
-    isLoaded && (
-      <div className="full-height flex flex-col overflow-hidden bg-home bg-cover text-gray_10 dark:bg-primary_10 dark:bg-home_dark dark:text-white_gray">
-        <NavBar />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
+    useIsComponentLoaded() && (
+      <>
+        <Head>
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta name="author" content="Dylan Buchi" />
+        </Head>
+        <AppContainer>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </AppContainer>
+      </>
     )
   );
 };

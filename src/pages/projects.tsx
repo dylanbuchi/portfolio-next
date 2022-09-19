@@ -1,9 +1,11 @@
+import MyHead from 'components/MyHead';
+import Container from 'containers/Container';
 import type { NextPage } from 'next';
-import Home from '../components/Home';
 
 const ProjectsPage: NextPage = () => (
   <>
-    <Home />
+    <MyHead title="Projects" />
+    <Container> </Container>
   </>
 );
 
