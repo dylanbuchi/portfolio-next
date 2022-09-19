@@ -1,11 +1,10 @@
 import MyHead from 'components/MyHead';
-import Container from 'containers/Container';
 import type { NextPage } from 'next';
 
 const ProjectsPage: NextPage = () => (
   <>
     <MyHead title="Projects" />
-    <Container> </Container>
+    <div className="overflow-y-scroll"></div>
   </>
 );
 
