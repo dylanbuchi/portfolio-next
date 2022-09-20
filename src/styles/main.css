@@ -11,7 +11,7 @@
     font-size: 100%;
     -webkit-tap-highlight-color: transparent;
 
-    @apply landscape_max:text-[75%];
+    @apply landscape_max:text-[65%];
     @apply xl:text-[125%];
   }
 
@@ -39,8 +39,27 @@
   .to-add-blur {
   }
 
+  .no-blur {
+    filter: blur(0px) !important;
+  }
+
   .devicons:hover::after {
     content: '';
     color: #fdfdfd;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
