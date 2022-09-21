@@ -18,7 +18,7 @@ const ProjectButtons = ({ project }: ProjectProps) => {
             </Link>
           </div>
           <div className="w-[50%] p-2 transition">
-            <Link href={project.codeLink ?? ''}>
+            <Link href={project.codeLink ?? '#'}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,8 +33,8 @@ const ProjectButtons = ({ project }: ProjectProps) => {
     }
     return (
       <>
-        <div className="w-[100%] p-2">
-          <Link href={project.codeLink ?? ''}>
+        <div className="mx-auto w-[50%] p-2">
+          <Link href={project.codeLink ?? '#'}>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -47,7 +47,6 @@ const ProjectButtons = ({ project }: ProjectProps) => {
       </>
     );
   };
-
   return renderButtons();
 };
 
