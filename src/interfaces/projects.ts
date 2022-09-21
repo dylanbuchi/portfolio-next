@@ -4,6 +4,7 @@ export interface ProjectLinks {
 }
 
 export interface ProjectIcons {
+  id?: string;
   name: string;
   icon: string;
 }

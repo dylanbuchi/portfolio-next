@@ -24,18 +24,18 @@ export const PROJECT_NAMES = {
 };
 
 const TECHS: ProjectTechs = {
-  python: { name: 'Python', icon: icons.python },
-  django: { name: 'Django', icon: icons.django },
-  css: { name: 'Css', icon: icons.css },
-  javaScript: { name: 'JavaScript', icon: icons.javaScript },
-  typeScript: { name: 'TypeScript', icon: icons.typeScript },
-  react: { name: 'React', icon: icons.react },
-  flutter: { name: 'Flutter', icon: icons.flutter },
-  dart: { name: 'Dart', icon: icons.dart },
-  java: { name: 'Java', icon: icons.java },
+  python: { name: 'Python', icon: icons.python, id: uuidv4() },
+  django: { name: 'Django', icon: icons.django, id: uuidv4() },
+  css: { name: 'Css', icon: icons.css, id: uuidv4() },
+  javaScript: { name: 'JavaScript', icon: icons.javaScript, id: uuidv4() },
+  typeScript: { name: 'TypeScript', icon: icons.typeScript, id: uuidv4() },
+  react: { name: 'React', icon: icons.react, id: uuidv4() },
+  flutter: { name: 'Flutter', icon: icons.flutter, id: uuidv4() },
+  dart: { name: 'Dart', icon: icons.dart, id: uuidv4() },
+  java: { name: 'Java', icon: icons.java, id: uuidv4() },
 } as const;
 
-const PROJECT_IMAGE_SRC_BASE_URL =
+export const PROJECT_IMAGE_SRC_BASE_URL =
   'https://user-images.githubusercontent.com/52018183';
 
 const PROJECTS: { [name: string]: ProjectType } = {

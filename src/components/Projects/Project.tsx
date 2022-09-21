@@ -1,15 +1,15 @@
 import { PROJECT_NAMES } from 'constants/projects/projects';
 import { ProjectProps } from 'interfaces/projects';
-
 import Image from 'next/image';
+import { Fragment } from 'react';
 import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: ProjectProps) => {
   const renderIcons = () => {
-    return project.techs.map(({ name, icon }) => {
+    return project.techs.map(({ name, icon, id }) => {
       const darkItems = ['react', 'django', 'java'];
       return (
-        <>
+        <Fragment key={id}>
           {name}
           <span
             className={`${
@@ -24,7 +24,7 @@ const Project = ({ project }: ProjectProps) => {
           >
             <Image layout="fill" src={icon} alt={name} />
           </span>
-        </>
+        </Fragment>
       );
     });
   };
@@ -43,9 +43,9 @@ const Project = ({ project }: ProjectProps) => {
               PROJECT_NAMES.hangman,
             ].includes(project.projectGithubName ?? '')
               ? 'object-left'
-              : ''
-          } ${
-            PROJECT_NAMES.expenses === project.projectGithubName
+              : [PROJECT_NAMES.expenses, PROJECT_NAMES.movies].includes(
+                  project.projectGithubName ?? '',
+                )
               ? 'object-top'
               : ''
           }`}
