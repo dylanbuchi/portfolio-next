@@ -1,11 +1,12 @@
 import { PROJECT_NAMES } from 'constants/projects/projects';
 import { ProjectProps } from 'interfaces/projects';
+
 import Image from 'next/image';
 import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: ProjectProps) => {
   return (
-    <li className="relative mt-5 h-fit rounded-2xl bg-primary_90 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:m-0 lg:scale-[0.75] lg:hover:scale-[0.8]">
+    <li className="relative mt-5 h-fit rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:m-0 lg:w-[105%] lg:scale-[0.75] lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
       <div className="relative h-72 w-full overflow-hidden rounded-2xl rounded-b-none">
         <Image
           src={project.imgSrc}
@@ -32,6 +33,7 @@ const Project = ({ project }: ProjectProps) => {
           {project.name}
         </h3>
       </div>
+
       <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden p-4">
         <div
           aria-hidden="true"
