@@ -12,6 +12,9 @@ module.exports = {
         landscape_max: {
           raw: '(orientation: landscape) and (max-width: 956px)',
         },
+        landscape_max_height_sm: {
+          raw: '(orientation: landscape) and (max-height: 400px)',
+        },
       },
       colors: {
         white: '#fff',
