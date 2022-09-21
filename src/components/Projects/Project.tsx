@@ -5,6 +5,30 @@ import Image from 'next/image';
 import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: ProjectProps) => {
+  const renderIcons = () => {
+    return project.techs.map(({ name, icon }) => {
+      const darkItems = ['react', 'django', 'java'];
+      return (
+        <>
+          {name}
+          <span
+            className={`${
+              darkItems.includes(name.toLowerCase())
+                ? 'rounded-3xl bg-slate-700 dark:bg-transparent '
+                : ''
+            } ${
+              name.toLowerCase() === 'django' || name.toLowerCase() === 'java'
+                ? 'rounded-sm bg-transparent dark:bg-white_gray'
+                : ''
+            } relative ml-1 mr-3 inline-flex h-4 w-4 overflow-hidden align-sub `}
+          >
+            <Image layout="fill" src={icon} alt={name} />
+          </span>
+        </>
+      );
+    });
+  };
+
   return (
     <li className="relative mt-5 h-fit rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:m-0 lg:w-[105%] lg:scale-[0.75] lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
       <div className="relative h-72 w-full overflow-hidden rounded-2xl rounded-b-none">
@@ -27,9 +51,11 @@ const Project = ({ project }: ProjectProps) => {
           }`}
         />
       </div>
-      <div className="relative -mt-0 bg-white_gray p-5 dark:bg-primary_30">
-        <p className="mt-1 text-xs">{project.techs.join(' | ')}</p>
-        <h3 className="text-md font-bold dark:text-white_gray">
+      <div className="relative -mt-0 bg-primary_90 p-5 pt-2 dark:bg-primary_30">
+        <div className="flex items-baseline justify-between">
+          <p className="mt-2 text-sm tracking-normal">{renderIcons()}</p>
+        </div>
+        <h3 className="text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
         </h3>
       </div>
