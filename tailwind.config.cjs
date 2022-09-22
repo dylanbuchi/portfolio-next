@@ -20,8 +20,13 @@ module.exports = {
         white: '#fff',
         white_gray: '#f5f9f7',
 
+        linkedin: '#0077b5',
+        twitter: '#1da1f2',
+        github: '#333',
+
         primary_10: '#0d1a26',
         primary_20: '#19334d',
+        primary_25: '#145369',
         primary_30: '#264d73',
         primary_40: '#336699',
         primary_50: '#4080bf',
@@ -53,6 +58,9 @@ module.exports = {
         page404: "url('/assets/images/pages/404/404-background.jpg')",
         home: "url('/assets/images/pages/home/rainbow-vortex.png')",
         home_dark: "url('/assets/images/pages/home/rainbow-vortex-dark.png')",
+
+        contact: "url('/assets/images/pages/contact/bg-contact.png')",
+        contact_dark: "url('/assets/images/pages/contact/bg-contact-dark.png')",
       },
       fontFamily: {
         pacifico: ['Pacifico, cursive'],
@@ -60,5 +68,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+  ],
 };
