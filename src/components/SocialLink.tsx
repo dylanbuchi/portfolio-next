@@ -1,26 +1,24 @@
+import { Props } from 'interfaces/props';
+import Link from 'next/link';
 import type { ReactElement } from 'react';
 import type { IconType } from 'react-icons';
 
-interface SocialLinkProps {
+interface SocialLinkProps extends Props {
   renderIcon: () => ReactElement<IconType>;
   href: string;
-  classes?: string;
 }
 
 const SocialLink = ({
   renderIcon,
   href = '/#',
-  classes = '',
+  className = '',
 }: SocialLinkProps) => {
   return (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      className={`ml-[0.1rem] cursor-pointer rounded-xl bg-[#dae6f2]  p-3 shadow-sm shadow-primary_10 transition hover:scale-150 hover:bg-transparent hover:shadow-none dark:bg-[#254d77] dark:shadow-none dark:hover:bg-transparent ${classes} text-3xl`}
-    >
-      {renderIcon()}
-    </a>
+    <Link href={href}>
+      <a target="_blank" rel="noopener noreferrer" className={`${className}`}>
+        {renderIcon()}
+      </a>
+    </Link>
   );
 };
 
