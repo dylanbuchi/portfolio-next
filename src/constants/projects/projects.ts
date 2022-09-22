@@ -1,8 +1,10 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import type { ProjectTechs, ProjectType } from 'interfaces/projects';
 import { capitalize } from 'utilities/functions';
-import { v4 as uuidv4 } from 'uuid';
-import { icons } from '../../constants/images/icons';
-import { SOCIAL_LINKS, USERNAME } from '../socials';
+
+import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
+import { icons } from 'constants/images/icons';
 
 const getProjectName = (projectName: string) => {
   return capitalize(projectName.split('-').join(' '));

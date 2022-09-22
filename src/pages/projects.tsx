@@ -1,9 +1,11 @@
-import MyHead from 'components/MyHead';
-import ProjectList from 'components/Projects/ProjectList';
-import { GIFS } from 'constants/images/python-31-days-code';
 import type { NextPage } from 'next';
 import { useState } from 'react';
-import { PROJECTS_LIST } from '../constants/projects/projects';
+
+import { GIFS } from 'constants/images/python-31-days-code';
+import { PROJECTS_LIST } from 'constants/projects/projects';
+
+import MyHead from 'components/MyHead';
+import ProjectList from 'components/Projects/ProjectList';
 
 const ProjectsPage: NextPage = () => {
   const itemToSetGif = '31-days-of-code';

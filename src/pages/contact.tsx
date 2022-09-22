@@ -1,4 +1,4 @@
-import Contact from 'components/Contact';
+import Contact from 'components/Contact/Contact';
 import MyHead from 'components/MyHead';
 import type { NextPage } from 'next';
 

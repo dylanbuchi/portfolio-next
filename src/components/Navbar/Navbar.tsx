@@ -1,9 +1,9 @@
-import { Disclosure } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { Disclosure } from '@headlessui/react';
 
-import MobileMenuButton from '../Buttons/MobileMenuButton';
-import ToggleDarkModeToggle from '../Buttons/ToggleDarkModeButton';
+import MobileMenuButton from 'components/Buttons/MobileMenuButton';
+import ToggleDarkModeToggle from 'components/Buttons/ToggleDarkModeButton';
 import NavItemList from './NavItemList';
 
 const NavBar = () => {

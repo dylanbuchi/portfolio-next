@@ -1,16 +1,11 @@
-import { MoonIcon, SunIcon } from '@heroicons/react/outline/index';
-import { LOCAL_STORAGE__THEME_KEY } from 'constants/storage';
 import { useEffect } from 'react';
+import { MoonIcon, SunIcon } from '@heroicons/react/outline/index';
+
+import { LOCAL_STORAGE__THEME_KEY } from 'constants/storage';
+import { DARK_THEME, LightDarkTheme, LIGHT_THEME } from 'constants/dark_mode';
 
 import useStorage from 'utilities/hooks/useStorage';
-
-import {
-  DARK_THEME,
-  LightDarkTheme,
-  LIGHT_THEME,
-} from '../../constants/dark_mode';
-
-import setClassNames from '../../utilities/functions';
+import setClassNames from 'utilities/functions';
 
 const ToggleDarkModeToggle = () => {
   const isSystemInDarkMode = matchMedia('(prefers-color-scheme: dark)').matches;

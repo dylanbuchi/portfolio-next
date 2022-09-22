@@ -1,9 +1,9 @@
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
 
+import ContactForm from 'components/Contact/ContactForm';
+import SocialLink from 'components/SocialLink';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import ContactForm from './Contact/ContactForm';
-import SocialLink from './SocialLink';
 
 const Contact = () => {
   return (

@@ -1,9 +1,10 @@
-import Layout from '../layouts/Layout';
-
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+
+import Layout from 'layouts/Layout';
 import useIsComponentLoaded from 'utilities/hooks/useIsComponentLoaded';
-import '../styles/main.css';
+
+import 'styles/main.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
