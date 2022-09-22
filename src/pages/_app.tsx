@@ -5,20 +5,16 @@ import Layout from 'layouts/Layout';
 import useIsComponentLoaded from 'utilities/hooks/useIsComponentLoaded';
 
 import 'styles/main.css';
+import MyHead from 'components/MyHead';
+
+const DEFAULT_IMG_SRC =
+  'https://user-images.githubusercontent.com/52018183/97459431-89ff8300-191a-11eb-93c2-36a04db97006.png';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     useIsComponentLoaded() && (
       <>
-        <Head>
-          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <meta name="author" content="Dylan Buchi" />
-        </Head>
+        <MyHead />
         <div
           className={`full-height flex flex-col bg-home bg-cover text-gray_10 dark:bg-primary_10 dark:bg-home_dark dark:text-gray-300`}
         >
