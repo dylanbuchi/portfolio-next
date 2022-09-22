@@ -31,27 +31,30 @@ const Contact = () => {
           </dl>
           <ul className="mt-8 flex space-x-12">
             <SocialLink
+              className=""
               href={`${SOCIAL_LINKS.linkedin.website}/in/${USERNAME}`}
               renderIcon={() => (
-                <div className="hover:rounded-sm hover:border-black hover:bg-white_gray">
-                  <FaLinkedin className="h-6  w-6  hover:scale-[1.28] hover:text-linkedin dark:hover:text-linkedin" />
+                <div className="text-linkedin hover:rounded-sm hover:border-black hover:bg-white_gray dark:text-accent_90 md:bg-transparent">
+                  <FaLinkedin className=" h-6 w-6 hover:scale-[1.28] hover:text-linkedin dark:hover:text-linkedin" />
                 </div>
               )}
             />
-            <div className="hover:rounded-full hover:border-black hover:bg-white_gray">
+            <div className="text-github hover:rounded-full hover:border-black hover:bg-white_gray dark:text-accent_90">
               <SocialLink
                 href={`${SOCIAL_LINKS.github.website}/${USERNAME}`}
                 renderIcon={() => (
-                  <FaGithub className="h-6 w-6 hover:scale-[1.28] dark:hover:text-github" />
+                  <FaGithub className=" h-6 w-6 hover:scale-[1.28] dark:hover:text-github" />
                 )}
               />
             </div>
-            <SocialLink
-              href={`${SOCIAL_LINKS.twitter.website}/${USERNAME}`}
-              renderIcon={() => (
-                <FaTwitter className="h-6 w-6  hover:scale-[1.28]  hover:text-twitter" />
-              )}
-            />
+            <div className=" text-twitter dark:text-accent_90 ">
+              <SocialLink
+                href={`${SOCIAL_LINKS.twitter.website}/${USERNAME}`}
+                renderIcon={() => (
+                  <FaTwitter className="h-6 w-6 hover:scale-[1.28] hover:text-twitter" />
+                )}
+              />
+            </div>
           </ul>
         </div>
         <div className="h-[full] px-6 sm:px-10 lg:col-span-2 lg:my-auto xl:p-12">
