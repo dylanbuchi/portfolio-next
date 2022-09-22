@@ -8,19 +8,29 @@ const Project = ({ project }: ProjectProps) => {
   const renderIcons = () => {
     return project.techs.map(({ name, icon, id }) => {
       const darkItems = ['react', 'django', 'java'];
+
+      const techNameLower = name.toLowerCase();
+
+      let iconStyles = '';
+
+      switch (techNameLower) {
+        case darkItems.find((item) => item === techNameLower):
+          iconStyles = 'rounded-3xl bg-slate-700 dark:bg-transparent';
+
+        case 'django' || 'java':
+          iconStyles = 'rounded-sm bg-transparent dark:bg-white_gray';
+          break;
+
+        case 'python':
+          iconStyles = 'h-[1rem]';
+          break;
+      }
+
       return (
         <Fragment key={id}>
           {name}
           <span
-            className={`${
-              darkItems.includes(name.toLowerCase())
-                ? 'rounded-3xl bg-slate-700 dark:bg-transparent '
-                : ''
-            } ${
-              name.toLowerCase() === 'django' || name.toLowerCase() === 'java'
-                ? 'rounded-sm bg-transparent dark:bg-white_gray'
-                : ''
-            } relative ml-1 mr-3 inline-flex h-4 w-4 overflow-hidden align-sub `}
+            className={`relative ml-1 mr-3 inline-flex h-3.5 w-3.5 overflow-hidden align-sub ${iconStyles}`}
           >
             <Image layout="fill" src={icon} alt={name} />
           </span>
@@ -51,9 +61,9 @@ const Project = ({ project }: ProjectProps) => {
           }`}
         />
       </div>
-      <div className="relative -mt-0 bg-primary_90 p-5 pt-2 dark:bg-primary_30">
+      <div className="relative -mt-0 bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
         <div className="flex items-baseline justify-between">
-          <p className="mt-2 text-sm tracking-normal">{renderIcons()}</p>
+          <p className="mt-2 text-sm">{renderIcons()}</p>
         </div>
         <h3 className="text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
