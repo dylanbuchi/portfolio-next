@@ -62,4 +62,8 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .input-form {
+    @apply block w-full rounded-md border border-gray-400 shadow-sm focus:border-primary_20 focus:ring-primary_20 dark:border-gray-600 dark:bg-[#202c38] dark:focus:ring-slate-500;
+  }
 }
