@@ -11,26 +11,30 @@ const Project = ({ project }: ProjectProps) => {
 
       const techNameLower = name.toLowerCase();
 
-      let iconStyles = '';
+      const iconStyles: string[] = [];
+
+      const checkItem = (list: string[], target: string) =>
+        list.find((item) => item === target);
 
       switch (techNameLower) {
-        case darkItems.find((item) => item === techNameLower):
-          iconStyles = 'rounded-3xl bg-slate-700 dark:bg-transparent';
+        case checkItem(['django', 'java'], techNameLower):
+          iconStyles.push('rounded-sm bg-transparent dark:bg-white_gray');
 
-        case 'django' || 'java':
-          iconStyles = 'rounded-sm bg-transparent dark:bg-white_gray';
+        case checkItem(darkItems, techNameLower):
+          iconStyles.push('rounded-3xl bg-slate-700 dark:bg-transparent');
           break;
 
         case 'python':
-          iconStyles = 'h-[1rem]';
-          break;
+          iconStyles.push('h-[1.05rem]');
       }
 
       return (
         <Fragment key={id}>
           {name}
           <span
-            className={`relative ml-1 mr-3 inline-flex h-3.5 w-3.5 overflow-hidden align-sub ${iconStyles}`}
+            className={`relative ml-[0.2rem] mr-2 inline-flex h-3.5 w-3.5 overflow-hidden align-sub ${iconStyles.join(
+              ' ',
+            )}`}
           >
             <Image layout="fill" src={icon} alt={name} />
           </span>
@@ -63,9 +67,11 @@ const Project = ({ project }: ProjectProps) => {
       </div>
       <div className="relative -mt-0 bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
         <div className="flex items-baseline justify-between">
-          <p className="mt-2 text-sm">{renderIcons()}</p>
+          <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
+            {renderIcons()}
+          </p>
         </div>
-        <h3 className="text-lg font-bold tracking-wide dark:text-white_gray">
+        <h3 className="mt-2 text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
         </h3>
       </div>
