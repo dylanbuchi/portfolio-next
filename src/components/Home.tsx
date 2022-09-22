@@ -10,6 +10,9 @@ const Home = () => {
   const deviconBoxStyles =
     'hover:lumos relative ml-4 h-9 w-9 shrink-0 lg:h-10 lg:w-10 h-9 w-9';
 
+  const iconStyle =
+    'ml-[0.1rem] cursor-pointer rounded-xl bg-[#dae6f2] p-3 text-3xl shadow-sm shadow-primary_10 transition hover:scale-150 hover:bg-transparent hover:shadow-none dark:bg-[#254d77] dark:shadow-none dark:hover:bg-transparent';
+
   return (
     <div className="to-add-blur mx-10 flex h-screen flex-col justify-evenly text-base sm:m-0 sm:items-center">
       <div className="mt-auto">
@@ -27,17 +30,25 @@ const Home = () => {
           <SocialLink
             href={`${SOCIAL_LINKS.linkedin.website}/in/${USERNAME}`}
             renderIcon={() => <FaLinkedin />}
-            classes="text-[#0077b5] hover:text-[#0077b5] dark:text-white_gray dark:hover:text-[#0077b5]"
+            className={
+              ' text-[#0077b5] hover:text-[#0077b5] dark:text-white_gray dark:hover:text-[#0077b5] ' +
+              iconStyle
+            }
           />
           <SocialLink
             href={`${SOCIAL_LINKS.github.website}/${USERNAME}`}
             renderIcon={() => <FaGithub />}
-            classes="text-[#333] hover:text-[#333]  dark:text-white_gray"
+            className={
+              'text-[#333] hover:text-[#333]  dark:text-white_gray ' + iconStyle
+            }
           />
           <SocialLink
             href={`${SOCIAL_LINKS.twitter.website}/${USERNAME}`}
             renderIcon={() => <FaTwitter />}
-            classes="text-[#1da1f2] hover:t8ext-[#1da1f2] dark:text-white_gray  dark:hover:text-[#1da1f2]"
+            className={
+              'hover:t8ext-[#1da1f2] text-[#1da1f2] dark:text-white_gray  dark:hover:text-[#1da1f2] ' +
+              iconStyle
+            }
           />
         </div>
       </div>
