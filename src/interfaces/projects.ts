@@ -17,6 +17,7 @@ export interface ProjectType extends ProjectLinks {
   imgAlt?: string;
   techs: ProjectIcons[];
   projectGithubName?: string;
+  description?: string;
 }
 
 export interface ProjectProps {

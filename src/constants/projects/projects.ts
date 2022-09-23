@@ -45,56 +45,66 @@ export const PROJECT_IMAGE_SRC_BASE_URL =
   'https://user-images.githubusercontent.com/52018183';
 
 const PROJECTS: { [name: string]: ProjectType } = {
-  [PROJECT_NAMES.bigMovies]: {
-    name: PROJECT_NAMES.bigMovies,
-    techs: [TECHS.react, TECHS.javaScript, TECHS.css],
-    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/176925671-87c2daa4-115f-4440-acc7-218e2146701d.png`,
-    demoLink: 'https://big-movies.netlify.app/',
-  },
-
-  [PROJECT_NAMES.francisPortfolio]: {
-    name: PROJECT_NAMES.francisPortfolio,
-    alternativeName: "Francis's Portfolio",
-    techs: [TECHS.javaScript, TECHS.python, TECHS.css],
-    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/97243778-d42b1c00-17d5-11eb-82b3-431cece272e1.png`,
-    demoLink: 'https://fbrempong.pythonanywhere.com',
-  },
-
-  [PROJECT_NAMES.findCustomers]: {
-    name: PROJECT_NAMES.findCustomers,
-    techs: [TECHS.django, TECHS.python, TECHS.css],
-    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/107127881-ef5afc80-6897-11eb-8ff6-0bc4377c2bd5.gif`,
-    demoLink: 'https://find-customers.herokuapp.com/',
-  },
-
   [PROJECT_NAMES.python31days]: {
     name: PROJECT_NAMES.python31days,
     techs: [TECHS.python],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/105533202-8afe4180-5cca-11eb-8754-e77d37dd618b.gif`,
+    description: 'Personal challenge: build 31 Python projects in one month.',
+  },
+
+  [PROJECT_NAMES.bigMovies]: {
+    name: PROJECT_NAMES.bigMovies,
+    techs: [TECHS.react, TECHS.javaScript, TECHS.css, TECHS.html],
+    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/176925671-87c2daa4-115f-4440-acc7-218e2146701d.png`,
+    demoLink: 'https://big-movies.netlify.app/',
+    description:
+      'Search, watch movie trailers and login to access your watchlist and favorites.',
   },
 
   [PROJECT_NAMES.discordBot]: {
     name: PROJECT_NAMES.discordBot,
     techs: [TECHS.python, TECHS.mongodb],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/96628718-fe1da380-12e8-11eb-8787-4c7ff537a310.png`,
+    description: 'Freelance job: build a custom discord bot.',
+  },
+
+  [PROJECT_NAMES.francisPortfolio]: {
+    name: PROJECT_NAMES.francisPortfolio,
+    alternativeName: "Francis's Portfolio",
+    techs: [TECHS.flask, TECHS.python, TECHS.javaScript, TECHS.css, TECHS.html],
+    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/97243778-d42b1c00-17d5-11eb-82b3-431cece272e1.png`,
+    demoLink: 'https://fbrempong.pythonanywhere.com',
+    description: 'Freelance job: build a custom portfolio website.',
+  },
+
+  [PROJECT_NAMES.findCustomers]: {
+    name: PROJECT_NAMES.findCustomers,
+    techs: [TECHS.django, TECHS.python, TECHS.sqlite, TECHS.css, TECHS.html],
+    imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/107127881-ef5afc80-6897-11eb-8ff6-0bc4377c2bd5.gif`,
+    demoLink: 'https://find-customers.herokuapp.com/',
+    description: 'List every customer info and location or find them by id.',
   },
 
   [PROJECT_NAMES.expenses]: {
     name: PROJECT_NAMES.expenses,
     techs: [TECHS.flutter, TECHS.dart],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/62386638-d947df80-b52e-11e9-9745-a5de55649ebb.gif`,
+    description: 'A mobile app to track expenses.',
   },
 
   [PROJECT_NAMES.movies]: {
     name: PROJECT_NAMES.movies,
     techs: [TECHS.flutter, TECHS.dart],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/63264632-f20c0100-c261-11e9-8ff4-6ee8599ac964.png`,
+    description:
+      'A movies mobile app: Login, watch trailers and buy some awesome movies.',
   },
 
   [PROJECT_NAMES.hangman]: {
     name: PROJECT_NAMES.hangman,
     techs: [TECHS.java],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/71909796-7a2a6e80-314f-11ea-8797-1fa7a6614545.png`,
+    description: 'Play the classic hangman game in you terminal.',
   },
 };
 
@@ -110,6 +120,7 @@ Object.values(PROJECTS).forEach(({ name, ...item }) => {
     imgAlt: `${getProjectLink(name)} Project`,
     techs: item.techs,
     projectGithubName: name,
+    description: item.description,
   };
 
   PROJECTS_LIST.push(project);

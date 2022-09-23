@@ -72,6 +72,8 @@ const Project = ({ project }: ProjectProps) => {
         <h3 className="mt-2 text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
         </h3>
+        <p className="text-md mt-1 pr-6 "> {project.description}</p>
+        <div className="absolute inset-x-0 -top-14 right-0 h-14 w-full bg-gradient-to-t from-slate-900 opacity-50"></div>
       </div>
 
       <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden p-4">
