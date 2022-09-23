@@ -36,6 +36,9 @@ const TECHS: ProjectTechs = {
   dart: { name: 'Dart', icon: icons.dart, id: uuidv4() },
   java: { name: 'Java', icon: icons.java, id: uuidv4() },
   mongodb: { name: 'MongoDB', icon: icons.mongodb, id: uuidv4() },
+  sqlite: { name: 'Sqlite', icon: icons.sqlite, id: uuidv4() },
+  html: { name: 'Html', icon: icons.html, id: uuidv4() },
+  flask: { name: 'Flask', icon: icons.flask, id: uuidv4() },
 } as const;
 
 export const PROJECT_IMAGE_SRC_BASE_URL =

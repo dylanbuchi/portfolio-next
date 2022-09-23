@@ -34,4 +34,7 @@ export type ProjectTechs = {
   dart: ProjectIcons;
   java: ProjectIcons;
   mongodb: ProjectIcons;
+  sqlite: ProjectIcons;
+  html: ProjectIcons;
+  flask: ProjectIcons;
 };
