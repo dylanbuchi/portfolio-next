@@ -39,6 +39,8 @@ const TECHS: ProjectTechs = {
   sqlite: { name: 'Sqlite', icon: icons.sqlite, id: uuidv4() },
   html: { name: 'Html', icon: icons.html, id: uuidv4() },
   flask: { name: 'Flask', icon: icons.flask, id: uuidv4() },
+  redux: { name: 'Redux', icon: icons.redux, id: uuidv4() },
+  materialUi: { name: 'Material UI', icon: icons.materialUi, id: uuidv4() },
 } as const;
 
 export const PROJECT_IMAGE_SRC_BASE_URL =
@@ -54,7 +56,14 @@ const PROJECTS: { [name: string]: ProjectType } = {
 
   [PROJECT_NAMES.bigMovies]: {
     name: PROJECT_NAMES.bigMovies,
-    techs: [TECHS.react, TECHS.javaScript, TECHS.css, TECHS.html],
+    techs: [
+      TECHS.react,
+      TECHS.redux,
+      TECHS.javaScript,
+      TECHS.materialUi,
+      TECHS.css,
+      TECHS.html,
+    ],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/176925671-87c2daa4-115f-4440-acc7-218e2146701d.png`,
     demoLink: 'https://big-movies.netlify.app/',
     description:

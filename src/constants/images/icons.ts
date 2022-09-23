@@ -12,6 +12,8 @@ import mongodb from '/public/assets/images/icons/mongodb/mongodb-plain.svg';
 import sqlite from '/public/assets/images/icons/sqlite/sqlite-original.svg';
 import html from '/public/assets/images/icons/html5/html5-original.svg';
 import flask from '/public/assets/images/icons/flask/flask-original.svg';
+import redux from '/public/assets/images/icons/redux/redux-original.svg';
+import materialUi from '/public/assets/images/icons/materialui/materialui-original.svg';
 
 export const icons = {
   typeScript,
@@ -28,4 +30,6 @@ export const icons = {
   sqlite,
   html,
   flask,
+  materialUi,
+  redux,
 };

@@ -38,4 +38,6 @@ export type ProjectTechs = {
   sqlite: ProjectIcons;
   html: ProjectIcons;
   flask: ProjectIcons;
+  materialUi: ProjectIcons;
+  redux: ProjectIcons;
 };

@@ -35,6 +35,10 @@ const Project = ({ project }: ProjectProps) => {
             'rounded-sm bg-transparent dark:bg-white_gray ml-[0.32em]',
           );
           break;
+
+        case 'redux':
+          iconStyles.push('rounded-3xl bg-transparent dark:bg-white_gray');
+          break;
       }
 
       return (
