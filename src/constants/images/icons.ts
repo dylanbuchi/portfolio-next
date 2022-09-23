@@ -8,6 +8,7 @@ import python from '/public/assets/images/icons/python/python-original.svg';
 import react from '/public/assets/images/icons/react/react-original.svg';
 import tailwind from '/public/assets/images/icons/tailwindcss/tailwindcss-plain.svg';
 import typeScript from '/public/assets/images/icons/typescript/typescript-original.svg';
+import mongodb from '/public/assets/images/icons/mongodb/mongodb-plain.svg';
 
 export const icons = {
   typeScript,
@@ -20,4 +21,5 @@ export const icons = {
   python,
   flutter,
   dart,
+  mongodb,
 };

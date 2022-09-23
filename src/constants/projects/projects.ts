@@ -35,6 +35,7 @@ const TECHS: ProjectTechs = {
   flutter: { name: 'Flutter', icon: icons.flutter, id: uuidv4() },
   dart: { name: 'Dart', icon: icons.dart, id: uuidv4() },
   java: { name: 'Java', icon: icons.java, id: uuidv4() },
+  mongodb: { name: 'MongoDB', icon: icons.mongodb, id: uuidv4() },
 } as const;
 
 export const PROJECT_IMAGE_SRC_BASE_URL =
@@ -71,7 +72,7 @@ const PROJECTS: { [name: string]: ProjectType } = {
 
   [PROJECT_NAMES.discordBot]: {
     name: PROJECT_NAMES.discordBot,
-    techs: [TECHS.python],
+    techs: [TECHS.python, TECHS.mongodb],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/96628718-fe1da380-12e8-11eb-8787-4c7ff537a310.png`,
   },
 

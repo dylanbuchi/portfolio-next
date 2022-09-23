@@ -33,4 +33,5 @@ export type ProjectTechs = {
   flutter: ProjectIcons;
   dart: ProjectIcons;
   java: ProjectIcons;
+  mongodb: ProjectIcons;
 };
