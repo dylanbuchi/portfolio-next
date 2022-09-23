@@ -98,7 +98,7 @@ const ContactForm = ({
       <div className="mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
         <button
           type="submit"
-          className="hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_30 dark:text-white sm:w-auto"
+          className="hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto"
         >
           Submit
         </button>

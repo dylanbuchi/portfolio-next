@@ -18,7 +18,7 @@ const Home = () => {
       <div className="mt-auto">
         <p className="text-2xl tracking-wide">
           {helloMsg}
-          <span className="text-3xl font-bold tracking-wide text-blue-700 dark:text-accent_10">
+          <span className="text-3xl font-bold tracking-wide text-blue-700 dark:text-accent_primary">
             Dylan
           </span>
           {' a'}

@@ -11,9 +11,9 @@ const Contact = () => {
       <h2 className="sr-only">Contact information</h2>
       <div className="relative grid grid-cols-1 lg:h-full lg:grid-cols-3 landscape_max:h-full landscape_max:grid-cols-2">
         <div className="bg-contact bg-cover  p-6 dark:bg-primary_30 dark:bg-contact_dark sm:bg-center sm:px-10 lg:h-full xl:p-12 landscape_max:pl-20 landscape_max:pt-9 landscape_max:pr-0">
-          <h3 className="text-xl font-medium">Contact information</h3>
+          <h3 className="text-xl font-medium ">Contact information</h3>
 
-          <dl className="mt-2 space-y-6">
+          <dl className="mt-2 space-y-6 dark:text-gray-100">
             <dt>
               <span className="sr-only">Phone number</span>
             </dt>
