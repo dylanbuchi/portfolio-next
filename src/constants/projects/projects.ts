@@ -67,7 +67,7 @@ const PROJECTS: { [name: string]: ProjectType } = {
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/176925671-87c2daa4-115f-4440-acc7-218e2146701d.png`,
     demoLink: 'https://big-movies.netlify.app/',
     description:
-      'Search, watch movie trailers and login to access your watchlist and favorites.',
+      'Search, watch trailers and login to access your watchlist and favorites.',
   },
 
   [PROJECT_NAMES.discordBot]: {
