@@ -59,8 +59,6 @@ const Contact = () => {
         </div>
         <div className="h-[full] px-6 sm:px-10 lg:col-span-2 lg:my-auto xl:p-12">
           <ContactForm
-            action="#"
-            method="POST"
             className={'grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8'}
           />
         </div>

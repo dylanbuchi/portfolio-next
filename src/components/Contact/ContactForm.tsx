@@ -3,14 +3,40 @@ import { Props } from 'interfaces/props';
 interface ContactFormProps extends Props {
   method?: string;
   action?: string;
+  name?: string;
 }
 
-const ContactForm = ({ className = '', method, action }: ContactFormProps) => {
+const ContactForm = ({
+  className = '',
+  method = 'POST',
+  action = '#',
+  name = 'contact',
+}: ContactFormProps) => {
   const labelStyles = 'block text-sm font-medium';
 
   return (
-    <form action={action} method={method} className={`${className}`}>
-      <div className="mt-6 ">
+    <form
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      name={name}
+      action={action}
+      method={method}
+      className={`${className}`}
+      onSubmit={(event) => {
+        event.preventDefault();
+      }}
+    >
+      <div className="mt-6">
+        <div className="hidden">
+          <label htmlFor="bot-field" className={labelStyles}>
+            First Name
+          </label>
+          <input
+            name="bot-field"
+            type="text"
+            className="input-form my-1 py-2"
+          />
+        </div>
         <label htmlFor="name" className={labelStyles}>
           Name
         </label>
@@ -24,7 +50,6 @@ const ContactForm = ({ className = '', method, action }: ContactFormProps) => {
           />
         </div>
       </div>
-
       <div className="mt-6">
         <label htmlFor="email" className={labelStyles}>
           Email
