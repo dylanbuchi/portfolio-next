@@ -7,32 +7,31 @@ import ProjectButtons from './ProjectButtons';
 const Project = ({ project }: ProjectProps) => {
   const renderIcons = () => {
     return project.techs.map(({ name, icon, id }) => {
-      const darkItems = ['react', 'django', 'java'];
-
       const techNameLower = name.toLowerCase();
-
       const iconStyles: string[] = [];
 
       const checkItem = (list: string[], target: string) =>
         list.find((item) => item === target);
 
       switch (techNameLower) {
-        case checkItem(['django', 'java'], techNameLower):
-          iconStyles.push('rounded-sm bg-transparent dark:bg-white_gray');
-
-        case checkItem(darkItems, techNameLower):
+        case 'react':
           iconStyles.push('rounded-3xl bg-slate-700 dark:bg-transparent');
           break;
 
         case 'python':
-          iconStyles.push('h-[1.05rem]');
+          iconStyles.push('h-[1.05rem] w-[1.05rem]');
+          break;
+
+        case checkItem(['django', 'java'], techNameLower):
+          iconStyles.push('rounded-sm bg-transparent dark:bg-white_gray');
+          break;
       }
 
       return (
         <Fragment key={id}>
           {name}
           <span
-            className={`relative ml-[0.2rem] mr-2 inline-flex h-3.5 w-3.5 overflow-hidden align-sub ${iconStyles.join(
+            className={`relative ml-[0.25rem] mr-2 inline-flex h-3.5 w-3.5 ${iconStyles.join(
               ' ',
             )}`}
           >
@@ -66,11 +65,10 @@ const Project = ({ project }: ProjectProps) => {
         />
       </div>
       <div className="relative -mt-0 bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
-        <div className="flex items-baseline justify-between">
-          <p className="text-sm font-medium text-gray-800 dark:text-gray-300">
-            {renderIcons()}
-          </p>
+        <div className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-300">
+          {renderIcons()}
         </div>
+
         <h3 className="mt-2 text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
         </h3>
