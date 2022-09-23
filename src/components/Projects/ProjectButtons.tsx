@@ -6,23 +6,23 @@ const ProjectButtons = ({ project }: ProjectProps) => {
     if (project.demoLink) {
       return (
         <>
-          <div className="w-[50%] p-2 ">
+          <div className="mt-2 w-[50%] p-6">
             <Link href={project.demoLink}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:lumos relative flex items-center justify-center rounded-2xl border border-transparent bg-blue-700 py-2 px-8 text-sm font-medium text-white_gray  transition dark:bg-accent_10 dark:text-gray-900"
+                className="hover:lumos relative flex items-center justify-center rounded-2xl border border-transparent bg-blue-700 py-2 px-8 text-sm font-medium text-white_gray  transition dark:bg-accent_primary "
               >
                 Demo<span className="sr-only">, {project.demoLink}</span>
               </a>
             </Link>
           </div>
-          <div className="w-[50%] p-2 transition">
+          <div className="mt-auto w-[50%] p-6 transition">
             <Link href={project.codeLink ?? '#'}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:lumos x relative flex items-center justify-center rounded-2xl border border-transparent  bg-blue-400 py-2 px-8 text-sm font-medium text-gray-900 transition  dark:bg-slate-200"
+                className="hover:lumos relative flex items-center justify-center rounded-2xl border border-transparent  bg-blue-400 py-2 px-8 text-sm font-medium transition dark:bg-blue-900   dark:text-white_gray"
               >
                 Code<span className="sr-only">, {project.codeLink}</span>
               </a>
@@ -33,12 +33,12 @@ const ProjectButtons = ({ project }: ProjectProps) => {
     }
     return (
       <>
-        <div className="mx-auto w-[50%] p-2">
+        <div className="my-2 mx-auto w-[50%] p-4">
           <Link href={project.codeLink ?? '#'}>
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:lumos relative flex items-center justify-center rounded-2xl   border border-transparent bg-blue-400 py-2 px-8 text-sm font-medium  text-gray-900 dark:bg-slate-200"
+              className="hover:lumos relative flex items-center justify-center rounded-2xl   border border-transparent bg-blue-400 py-2 px-8 text-sm font-medium dark:bg-blue-900  dark:text-white_gray"
             >
               Code<span className="sr-only">, {project.codeLink}</span>
             </a>
