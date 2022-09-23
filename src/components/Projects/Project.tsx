@@ -87,10 +87,10 @@ const Project = ({ project }: ProjectProps) => {
           {renderTechIcons()}
         </div>
 
-        <h3 className="mt-2 text-lg font-bold tracking-wide dark:text-white_gray">
+        <h3 className="mt-2.5 text-lg font-bold tracking-wide dark:text-white_gray">
           {project.name}
         </h3>
-        <p className="text-md mt-1 pr-6 "> {project.description}</p>
+        <p className={'text-md mt-1 pr-8'}> {project.description}</p>
         <div className="absolute inset-x-0 -top-14 right-0 h-14 w-full bg-gradient-to-t from-slate-900 opacity-50"></div>
       </div>
 
