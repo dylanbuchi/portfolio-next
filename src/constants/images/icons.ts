@@ -9,6 +9,9 @@ import react from '/public/assets/images/icons/react/react-original.svg';
 import tailwind from '/public/assets/images/icons/tailwindcss/tailwindcss-plain.svg';
 import typeScript from '/public/assets/images/icons/typescript/typescript-original.svg';
 import mongodb from '/public/assets/images/icons/mongodb/mongodb-plain.svg';
+import sqlite from '/public/assets/images/icons/sqlite/sqlite-original.svg';
+import html from '/public/assets/images/icons/html5/html5-original.svg';
+import flask from '/public/assets/images/icons/flask/flask-original.svg';
 
 export const icons = {
   typeScript,
@@ -22,4 +25,7 @@ export const icons = {
   flutter,
   dart,
   mongodb,
+  sqlite,
+  html,
+  flask,
 };
