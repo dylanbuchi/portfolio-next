@@ -1,11 +1,11 @@
 import { PROJECT_NAMES } from 'constants/projects/projects';
 import { ProjectProps } from 'interfaces/projects';
+
 import Image from 'next/image';
-import { Fragment } from 'react';
 import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: ProjectProps) => {
-  const renderIcons = () => {
+  const renderTechIcons = () => {
     return project.techs.map(({ name, icon, id }) => {
       const techNameLower = name.toLowerCase();
       const iconStyles: string[] = [];
@@ -19,32 +19,42 @@ const Project = ({ project }: ProjectProps) => {
           break;
 
         case 'python':
-          iconStyles.push('h-[1.05rem] w-[1.05rem]');
+          iconStyles.push('h-[1.35em] w-[1.35em]');
           break;
 
-        case checkItem(['django', 'java'], techNameLower):
-          iconStyles.push('rounded-sm bg-transparent dark:bg-white_gray');
+        case 'javascript':
+          iconStyles.push('ml-[0.3em]');
+          break;
+
+        case 'mongodb':
+          iconStyles.push('h-[1.3rem] w-[1.3rem] -ml-[0.1em]');
+          break;
+
+        case checkItem(['django', 'java', 'flask'], techNameLower):
+          iconStyles.push(
+            'rounded-sm bg-transparent dark:bg-white_gray ml-[0.32em]',
+          );
           break;
       }
 
       return (
-        <Fragment key={id}>
+        <div className="inline-flex items-center dark:text-gray-200" key={id}>
           {name}
           <span
-            className={`relative ml-[0.25rem] mr-2 inline-flex h-3.5 w-3.5 ${iconStyles.join(
+            className={`relative ml-[0.15rem] mr-4 h-3.5 w-3.5 ${iconStyles.join(
               ' ',
             )}`}
           >
             <Image layout="fill" src={icon} alt={name} />
           </span>
-        </Fragment>
+        </div>
       );
     });
   };
 
   return (
-    <li className="relative mt-5 h-fit rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:m-0 lg:w-[105%] lg:scale-[0.75] lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
-      <div className="relative h-72 w-full overflow-hidden rounded-2xl rounded-b-none">
+    <li className="relative mt-5 flex h-full flex-col items-stretch rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:-mt-[1rem] lg:w-[115%] lg:scale-[0.75] lg:p-0 lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
+      <div className="relative h-56 w-full overflow-hidden rounded-2xl rounded-b-none">
         <Image
           src={project.imgSrc}
           alt={project.imgAlt}
@@ -64,9 +74,13 @@ const Project = ({ project }: ProjectProps) => {
           }`}
         />
       </div>
-      <div className="relative -mt-0 bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
-        <div className="flex items-center text-sm font-medium text-gray-800 dark:text-gray-300">
-          {renderIcons()}
+      <div className="relative mb-auto bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
+        <div
+          className={`${
+            project.techs.length > 2 ? 'justify-center' : 'start'
+          } dark:text-gray-300" flex flex-wrap gap-y-1 text-sm font-semibold text-gray-800`}
+        >
+          {renderTechIcons()}
         </div>
 
         <h3 className="mt-2 text-lg font-bold tracking-wide dark:text-white_gray">
@@ -76,13 +90,7 @@ const Project = ({ project }: ProjectProps) => {
         <div className="absolute inset-x-0 -top-14 right-0 h-14 w-full bg-gradient-to-t from-slate-900 opacity-50"></div>
       </div>
 
-      <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden p-4">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50 dark:from-slate-800"
-        />
-      </div>
-      <div className="flex">
+      <div className="flex h-fit items-baseline justify-end">
         <ProjectButtons project={project} />
       </div>
     </li>
