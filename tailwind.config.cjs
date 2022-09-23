@@ -13,7 +13,7 @@ module.exports = {
           raw: '(orientation: landscape) and (max-width: 956px)',
         },
         landscape_max_height_sm: {
-          raw: '(orientation: landscape) and (max-height: 400px)',
+          raw: '(orientation: landscape) and (max-height: 432px)',
         },
       },
       colors: {
@@ -42,6 +42,8 @@ module.exports = {
         accent_50: '#ff944d',
         accent_80: '#f8f5e5',
         accent_90: '#fdfae7',
+
+        accent_primary: '#c2410c',
 
         gray_10: '#1a1a1a',
         gray_20: '#333333',
