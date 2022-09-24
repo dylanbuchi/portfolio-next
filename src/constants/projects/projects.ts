@@ -113,7 +113,7 @@ const PROJECTS: { [name: string]: ProjectType } = {
     name: PROJECT_NAMES.hangman,
     techs: [TECHS.java],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/71909796-7a2a6e80-314f-11ea-8797-1fa7a6614545.png`,
-    description: 'Play the classic hangman game in you terminal.',
+    description: 'Play the classic hangman game in your terminal.',
   },
 };
 
