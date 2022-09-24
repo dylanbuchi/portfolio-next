@@ -1,5 +1,6 @@
 import { Props } from 'interfaces/props';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import SuccessAlert from 'components/SuccessAlert';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 interface ContactFormProps extends Props {
   method?: string;
@@ -19,10 +20,20 @@ const ContactForm = ({
     message: '',
   });
 
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const FORM_BASE_URL = ' https://getform.io/f';
   const FORM_ENDPOINT = `${FORM_BASE_URL}/${process.env.getFormIoEndpoint}`;
 
   const labelStyles = 'block text-sm font-medium';
+
+  useEffect(() => {
+    const displayAlert = setTimeout(() => {
+      setFormSubmitted(false);
+    }, 4000);
+
+    return () => clearTimeout(displayAlert);
+  }, [formSubmitted, setFormSubmitted]);
 
   const resetQuery = () => {
     setQuery({ name: '', email: '', message: '', subject: '' });
@@ -56,8 +67,8 @@ const ContactForm = ({
       });
 
       if (response.ok) {
+        setFormSubmitted(true);
         resetQuery();
-        alert('Form submitted with success!');
       }
     } catch (error) {
       console.error(error);
@@ -68,7 +79,7 @@ const ContactForm = ({
     <form
       name={name}
       method={method}
-      className={`${className}`}
+      className={`${className} relative`}
       onSubmit={(event) => {
         return handleOnSubmitForm(event);
       }}
@@ -135,14 +146,24 @@ const ContactForm = ({
           />
         </div>
       </div>
-      <div className="mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
+      <div className=" mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
         <button
           type="submit"
-          className="hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto"
+          className={`hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto ${
+            formSubmitted ? 'invisible' : ''
+          }`}
         >
           Submit
         </button>
       </div>
+      {formSubmitted && (
+        <div className="absolute bottom-0 right-0 -left-0 sm:bottom-8">
+          <SuccessAlert
+            onClick={setFormSubmitted}
+            message="Your message has been sent with success!"
+          />
+        </div>
+      )}
     </form>
   );
 };
