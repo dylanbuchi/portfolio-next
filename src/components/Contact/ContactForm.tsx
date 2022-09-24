@@ -1,6 +1,7 @@
 import { Props } from 'interfaces/props';
 import SuccessAlert from 'components/SuccessAlert';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { emailChecker } from 'utilities/functions';
 
 interface ContactFormProps extends Props {
   method?: string;
@@ -21,6 +22,8 @@ const ContactForm = ({
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const [submitBtnIsDisabled, setSubmitBtnIsDisabled] = useState(true);
 
   const FORM_BASE_URL = ' https://getform.io/f';
   const FORM_ENDPOINT = `${FORM_BASE_URL}/${process.env.getFormIoEndpoint}`;
@@ -75,6 +78,15 @@ const ContactForm = ({
     }
   };
 
+  useEffect(() => {
+    const { email } = query;
+
+    const isEmailValid = emailChecker(email);
+    const areValuesFilled = Object.values(query).every((item) => item !== '');
+
+    setSubmitBtnIsDisabled(!(isEmailValid && areValuesFilled));
+  }, [query]);
+
   return (
     <form
       name={name}
@@ -90,6 +102,7 @@ const ContactForm = ({
         </label>
         <div className="mt-1">
           <input
+            maxLength={29}
             type="text"
             name="name"
             id="name"
@@ -105,6 +118,7 @@ const ContactForm = ({
         </label>
         <div className="mt-1">
           <input
+            maxLength={29}
             id="email"
             name="email"
             type="email"
@@ -120,6 +134,7 @@ const ContactForm = ({
         </label>
         <div className="mt-1">
           <input
+            maxLength={64}
             type="text"
             name="subject"
             id="subject"
@@ -138,7 +153,7 @@ const ContactForm = ({
           <textarea
             id="message"
             name="message"
-            maxLength={500}
+            maxLength={918}
             rows={2}
             className="input-form"
             aria-describedby="message-max"
@@ -146,11 +161,16 @@ const ContactForm = ({
           />
         </div>
       </div>
-      <div className=" mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
+      <div className="mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
         <button
+          disabled={submitBtnIsDisabled}
           type="submit"
           className={`hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto ${
             formSubmitted ? 'invisible' : ''
+          }${
+            submitBtnIsDisabled
+              ? 'pointer-events-none bg-gray-600 opacity-50 dark:bg-gray-500'
+              : ''
           }`}
         >
           Submit
