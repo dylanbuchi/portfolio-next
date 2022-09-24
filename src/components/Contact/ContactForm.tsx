@@ -1,4 +1,5 @@
 import { Props } from 'interfaces/props';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface ContactFormProps extends Props {
   method?: string;
@@ -9,34 +10,70 @@ interface ContactFormProps extends Props {
 const ContactForm = ({
   className = '',
   method = 'POST',
-  action = '#',
   name = 'contact',
 }: ContactFormProps) => {
+  const [query, setQuery] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const FORM_BASE_URL = ' https://getform.io/f';
+  const FORM_ENDPOINT = `${FORM_BASE_URL}/${process.env.getFormIoEndpoint}`;
+
   const labelStyles = 'block text-sm font-medium';
+
+  const resetQuery = () => {
+    setQuery({ name: '', email: '', message: '', subject: '' });
+  };
+
+  const handleOnChange = (
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    event.preventDefault();
+
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setQuery((previousQuery) => ({ ...previousQuery, [name]: value }));
+  };
+
+  const handleOnSubmitForm = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+
+    Object.entries(query).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        resetQuery();
+        alert('Form submitted with success!');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <form
-      netlify-honeypot="bot-field"
-      data-netlify="true"
       name={name}
-      action={action}
       method={method}
       className={`${className}`}
       onSubmit={(event) => {
-        event.preventDefault();
+        return handleOnSubmitForm(event);
       }}
     >
       <div className="mt-6">
-        <div className="hidden">
-          <label htmlFor="bot-field" className={labelStyles}>
-            First Name
-          </label>
-          <input
-            name="bot-field"
-            type="text"
-            className="input-form my-1 py-2"
-          />
-        </div>
         <label htmlFor="name" className={labelStyles}>
           Name
         </label>
@@ -47,6 +84,7 @@ const ContactForm = ({
             id="name"
             autoComplete="given-name"
             className="input-form"
+            onChange={(event) => handleOnChange(event)}
           />
         </div>
       </div>
@@ -61,6 +99,7 @@ const ContactForm = ({
             type="email"
             autoComplete="email"
             className="input-form"
+            onChange={(event) => handleOnChange(event)}
           />
         </div>
       </div>
@@ -74,6 +113,7 @@ const ContactForm = ({
             name="subject"
             id="subject"
             className="input-form"
+            onChange={(event) => handleOnChange(event)}
           />
         </div>
       </div>
@@ -91,7 +131,7 @@ const ContactForm = ({
             rows={2}
             className="input-form"
             aria-describedby="message-max"
-            defaultValue={''}
+            onChange={(event) => handleOnChange(event)}
           />
         </div>
       </div>
