@@ -21,7 +21,8 @@ const ContactForm = ({
     message: '',
   });
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmittedWithSuccess, setFormSubmittedWithSuccess] =
+    useState(false);
 
   const [submitBtnIsDisabled, setSubmitBtnIsDisabled] = useState(true);
 
@@ -32,11 +33,11 @@ const ContactForm = ({
 
   useEffect(() => {
     const displayAlert = setTimeout(() => {
-      setFormSubmitted(false);
+      setFormSubmittedWithSuccess(false);
     }, 4000);
 
     return () => clearTimeout(displayAlert);
-  }, [formSubmitted, setFormSubmitted]);
+  }, [formSubmittedWithSuccess, setFormSubmittedWithSuccess]);
 
   const resetQuery = () => {
     setQuery({ name: '', email: '', message: '', subject: '' });
@@ -70,7 +71,7 @@ const ContactForm = ({
       });
 
       if (response.ok) {
-        setFormSubmitted(true);
+        setFormSubmittedWithSuccess(true);
         resetQuery();
       }
     } catch (error) {
@@ -109,6 +110,7 @@ const ContactForm = ({
             autoComplete="given-name"
             className="input-form"
             onChange={(event) => handleOnChange(event)}
+            value={query.name}
           />
         </div>
       </div>
@@ -125,6 +127,7 @@ const ContactForm = ({
             autoComplete="email"
             className="input-form"
             onChange={(event) => handleOnChange(event)}
+            value={query.email}
           />
         </div>
       </div>
@@ -140,6 +143,7 @@ const ContactForm = ({
             id="subject"
             className="input-form"
             onChange={(event) => handleOnChange(event)}
+            value={query.subject}
           />
         </div>
       </div>
@@ -158,6 +162,7 @@ const ContactForm = ({
             className="input-form"
             aria-describedby="message-max"
             onChange={(event) => handleOnChange(event)}
+            value={query.message}
           />
         </div>
       </div>
@@ -166,20 +171,22 @@ const ContactForm = ({
           disabled={submitBtnIsDisabled}
           type="submit"
           className={`hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto ${
-            formSubmitted ? 'invisible' : ''
+            formSubmittedWithSuccess
+              ? 'outline:none pointer-events-none invisible'
+              : ''
           }${
             submitBtnIsDisabled
-              ? 'pointer-events-none bg-gray-600 opacity-50 dark:bg-gray-500'
+              ? ' pointer-events-none bg-gray-600 opacity-50 dark:bg-gray-500'
               : ''
           }`}
         >
           Submit
         </button>
       </div>
-      {formSubmitted && (
+      {formSubmittedWithSuccess && (
         <div className="absolute bottom-0 right-0 -left-0 sm:bottom-8">
           <SuccessAlert
-            onClick={setFormSubmitted}
+            onClick={setFormSubmittedWithSuccess}
             message="Your message has been sent with success!"
           />
         </div>
