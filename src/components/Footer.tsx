@@ -16,7 +16,7 @@ function Footer() {
   const itsNot404Page = router.pathname !== '/404';
   return (
     (itsNot404Page && (
-      <footer className="to-add-blur relative mt-auto  flex w-full items-center justify-evenly bg-primary_30 p-5 text-gray-300 dark:bg-[#1a202d] ">
+      <footer className="to-add-blur relative  flex items-center justify-evenly bg-primary_30 p-5 text-gray-300 dark:bg-[#1a202d] ">
         <div className="sm:absolute">
           <p className="text-[0.7rem]">
             &copy; 2019 - {currentYear}

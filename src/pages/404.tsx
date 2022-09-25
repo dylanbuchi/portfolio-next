@@ -9,8 +9,8 @@ const PageNotFound404 = () => {
     'Please check the URL in the address bar and try again.';
 
   return (
-    <div className="h-full bg-page404 bg-cover bg-center bg-no-repeat px-4 py-16 text-gray_90 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
-      <div className="mx-auto max-w-max">
+    <div className="bg-page404 bg-cover bg-center bg-no-repeat px-4 py-16 text-gray_90 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+      <div className="mx-auto">
         <main className="flex flex-col items-center justify-center sm:flex-row">
           <div className="flex flex-col items-center justify-center sm:ml-6">
             <p className="mb-4 text-4xl font-extrabold sm:hidden">

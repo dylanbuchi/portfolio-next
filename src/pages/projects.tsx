@@ -29,7 +29,7 @@ const ProjectsPage: NextPage = () => {
   return (
     <>
       <MyHead title="Projects" />
-      <div className="to-add-blur h-full overflow-y-auto">
+      <div className="to-add-blur mb-auto overflow-y-auto">
         <ProjectList projects={projects} />
       </div>
     </>

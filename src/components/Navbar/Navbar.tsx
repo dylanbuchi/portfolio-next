@@ -23,11 +23,11 @@ const NavBar = () => {
     (itsNot404Page && (
       <Disclosure
         as="nav"
-        className="h-auto min-w-[250px] bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
+        className=" bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
       >
         {({ open }) => (
           <>
-            <div className="flex max-w-7xl justify-between px-2 sm:px-6 lg:px-8">
+            <div className="flex justify-between px-2 sm:px-6 lg:px-8">
               <div className="mr-auto flex items-center font-pacifico">
                 <p className="text-2xl tracking-wide ">Buchi</p>
               </div>

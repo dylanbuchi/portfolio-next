@@ -57,8 +57,8 @@ const Project = ({ project }: ProjectProps) => {
   };
 
   return (
-    <li className="relative mt-5 flex h-full flex-col items-stretch rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:-mt-[1rem] lg:w-[115%] lg:scale-[0.75] lg:p-0 lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
-      <div className="relative h-56 w-full overflow-hidden rounded-2xl rounded-b-none">
+    <li className="relative mt-5 flex h-full  flex-col items-stretch rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:-mt-[1rem] lg:w-[115%] lg:scale-[0.75] lg:p-0 lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
+      <div className="relative h-56 overflow-hidden rounded-2xl rounded-b-none">
         <Image
           src={project.imgSrc}
           alt={project.imgAlt}
@@ -91,10 +91,10 @@ const Project = ({ project }: ProjectProps) => {
           {project.name}
         </h3>
         <p className={'text-md mt-1 pr-8'}> {project.description}</p>
-        <div className="absolute inset-x-0 -top-14 right-0 h-14 w-full bg-gradient-to-t from-slate-900 opacity-50"></div>
+        <div className="absolute inset-x-0 -top-14 right-0 h-14 bg-gradient-to-t from-slate-900 opacity-50"></div>
       </div>
 
-      <div className="flex h-fit items-baseline justify-end">
+      <div className="flex items-baseline justify-end">
         <ProjectButtons project={project} />
       </div>
     </li>
