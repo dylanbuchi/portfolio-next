@@ -1,18 +1,27 @@
 import { Props } from 'interfaces/props';
 import SuccessAlert from 'components/SuccessAlert';
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useEffect,
+  useState,
+} from 'react';
 import { emailChecker } from 'utilities/functions';
 
 interface ContactFormProps extends Props {
   method?: string;
   action?: string;
   name?: string;
+  setMessageOverflow: Dispatch<SetStateAction<boolean>>;
 }
 
 const ContactForm = ({
   className = '',
   method = 'POST',
   name = 'contact',
+  setMessageOverflow,
 }: ContactFormProps) => {
   const [query, setQuery] = useState({
     name: '',
@@ -80,13 +89,15 @@ const ContactForm = ({
   };
 
   useEffect(() => {
+    setMessageOverflow(query.message ? true : false);
+
     const { email } = query;
 
     const isEmailValid = emailChecker(email);
     const areValuesFilled = Object.values(query).every((item) => item !== '');
 
     setSubmitBtnIsDisabled(!(isEmailValid && areValuesFilled));
-  }, [query]);
+  }, [query, setMessageOverflow]);
 
   return (
     <form
@@ -166,11 +177,11 @@ const ContactForm = ({
           />
         </div>
       </div>
-      <div className="mt-6 mb-10 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
+      <div className="mt-6 sm:col-span-2 sm:flex sm:justify-end lg:mt-7">
         <button
           disabled={submitBtnIsDisabled}
           type="submit"
-          className={`hover:lumos inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white sm:w-auto ${
+          className={`hover:lumos inline-flex  items-center justify-center rounded-md border border-transparent bg-blue-700 px-4 py-2 text-base font-medium text-white_gray shadow-sm focus:outline-none focus:ring-2 focus:ring-primary_20 focus:ring-offset-2 dark:bg-accent_primary dark:text-white  ${
             formSubmittedWithSuccess
               ? 'outline:none pointer-events-none invisible'
               : ''

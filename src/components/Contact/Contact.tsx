@@ -8,11 +8,12 @@ import { useState } from 'react';
 
 const Contact = () => {
   const [messageOverflow, setMessageOverflow] = useState(false);
+
   return (
-    <div className="to-add-blur h-screen overflow-y-auto bg-[#c5d6e5] dark:bg-primary_10">
+    <div className="to-add-blur h-full overflow-y-auto bg-[#c5d6e5] dark:bg-primary_10">
       <h2 className="sr-only">Contact information</h2>
-      <div className="relative grid grid-cols-1 lg:h-full lg:grid-cols-3 landscape_max:h-full landscape_max:grid-cols-2">
-        <div className="bg-contact bg-cover  p-6 dark:bg-primary_30 dark:bg-contact_dark sm:bg-center sm:px-10 lg:h-full xl:p-12 landscape_max:pl-20 landscape_max:pt-9 landscape_max:pr-0">
+      <div className="relative grid h-full grid-cols-1 lg:grid-cols-3  landscape_max:grid-cols-2">
+        <div className="h-full bg-contact bg-cover p-8  dark:bg-primary_30 dark:bg-contact_dark sm:bg-center sm:px-10 xl:p-12 landscape_max:pl-20 landscape_max:pt-9 landscape_max:pr-0">
           <h3 className="text-xl font-medium ">Contact information</h3>
 
           <dl className="mt-2 space-y-6 dark:text-gray-100">
@@ -31,7 +32,7 @@ const Contact = () => {
               <span className="ml-3">devybuchi@gmail.com</span>
             </dd>
           </dl>
-          <ul className="mt-8 flex space-x-12">
+          <ul className="mt-8 flex w-fit space-x-12  rounded-md bg-gradient-to-t from-[#91c1dc] to-[#dae3eb] p-4 shadow-sm shadow-gray-500 dark:from-[#171d25]  dark:to-[#395672] dark:shadow-inner dark:shadow-primary_10">
             <SocialLink
               className=""
               href={`${SOCIAL_LINKS.linkedin.website}/in/${USERNAME}`}
