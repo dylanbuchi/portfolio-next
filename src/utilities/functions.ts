@@ -23,24 +23,37 @@ export const capitalize = (word: string) => {
 export const emailChecker = (email: string) => {
   if (!email) return false;
 
-  const valid_email_suffix = email.endsWith('.com');
-  const valid_at_sign =
+  const specialCharCheck = (specialChar: string, word: string) => {
+    for (let i = 0; i < word.length; i++) {
+      const char = word[i];
+
+      if (char === specialChar) {
+        if (i < word.length - 1 && !isAlphaNumeric(word[i + 1])) return false;
+      }
+    }
+    return true;
+  };
+
+  const onlyOneAtSign =
     email.split('').filter((item) => item === '@').length === 1;
 
-  const validFirstChar = email[0].match(/[a-z0-9]/gi);
+  const isAlphaNumeric = (char: string) => !!char.match(/[\w]/gi);
 
-  if (!valid_at_sign || !valid_email_suffix || !validFirstChar) return false;
+  const validFirstChar = isAlphaNumeric(email[0]);
+  const validLastChar = isAlphaNumeric(email[email.length - 1]);
 
-  const domain = email.split('@')[1];
+  if (
+    !onlyOneAtSign ||
+    !validFirstChar ||
+    !validLastChar ||
+    !specialCharCheck('@', email) ||
+    !specialCharCheck('.', email)
+  )
+    return false;
 
-  let dot_count = 0;
+  const [, domainName] = email.split('@');
 
-  for (const char of domain) {
-    if (dot_count > 1) return false;
-    if (char === '.') dot_count++;
-  }
-
-  return true;
+  return domainName.split('').filter((char) => char === '.').length;
 };
 
 export default setClassNames;
