@@ -10,14 +10,14 @@
     font-family: Inter;
     font-size: 100%;
     -webkit-tap-highlight-color: transparent;
-
     @apply landscape_max:text-[65%];
-    @apply xl:text-[125%];
+    /* @apply xl:text-[125%]; */ */
+    min-height: 100%;
   }
 
   html,
   body {
-    height: 100%;
+    width: 100%;
   }
 
   .full-height {
