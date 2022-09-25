@@ -14,19 +14,19 @@ const Home = () => {
     'ml-[0.1rem] cursor-pointer rounded-xl bg-[#dae6f2] p-3 text-3xl shadow-sm shadow-primary_10 transition hover:scale-150 hover:bg-transparent hover:shadow-none dark:bg-[#254d77] dark:shadow-none dark:hover:bg-transparent';
 
   return (
-    <div className="to-add-blur mx-10 flex h-screen flex-col justify-evenly text-base sm:m-0 sm:items-center">
-      <div className="mt-auto">
-        <p className="text-2xl tracking-wide">
+    <div className="to-add-blur flex h-full flex-col overflow-hidden text-base  sm:items-center">
+      <div className="mt-auto  p-10 sm:p-0">
+        <h2 className="text-2xl tracking-wide">
           {helloMsg}
           <span className="text-3xl font-bold tracking-wide text-blue-700 dark:text-accent_primary">
             Dylan
           </span>
           {' a'}
-        </p>
+        </h2>
         <h1 className="text-5xl font-extrabold leading-tight tracking-wide text-gray-800 dark:text-accent_90">
           Full-Stack Developer
         </h1>
-        <div className="mt-10 flex w-[75%] justify-between transition-colors sm:w-[40%] lg:w-[43%] landscape:w-[45%]">
+        <div className="flex w-[60%]  justify-between py-10 text-lg transition-colors sm:w-[50%]">
           <SocialLink
             href={`${SOCIAL_LINKS.linkedin.website}/in/${USERNAME}`}
             renderIcon={() => <FaLinkedin />}
@@ -52,27 +52,25 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className="-mx-10 mt-auto sm:w-[100%] lg:w-[45%] landscape_max:w-[50%]">
-        <div className="w-[100%] ">
-          <p className="text-md my-1 ml-10 text-left font-medium sm:ml-0 sm:text-center">
-            Built with:
-          </p>
-          <div className="bg-gradient-to-l from-[#ffffff00] to-primary_30 shadow-sm shadow-primary_10 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary_20 dark:to-primary_10 dark:shadow-none sm:rounded-none lg:rounded-xl lg:rounded-b-none landscape_max:flex landscape_max:justify-center landscape_max:rounded-xl landscape_max:rounded-b-none">
-            <div className="flex justify-evenly py-8 px-4 landscape_max:w-full">
-              <div
-                className={`${deviconBoxStyles} ml-0 rounded-full bg-white_gray text-center`}
-              >
-                {<Devicon name="nextjs" type="line" />}
-              </div>
-              <div className={`${deviconBoxStyles}dark:bg-transparent`}>
-                {<Devicon name="react" />}
-              </div>
-              <div className={`${deviconBoxStyles}`}>
-                {<Devicon name="typescript" />}
-              </div>
-              <div className={`${deviconBoxStyles}`}>
-                {<Devicon name="tailwindcss" type="plain" />}
-              </div>
+      <p className="text-md mt-auto px-2 text-center font-medium sm:ml-0 ">
+        Built with:
+      </p>
+      <div className="w-full bg-gradient-to-r from-[#b3cad5] to-primary_20 shadow-sm shadow-primary_10 dark:bg-transparent dark:bg-gradient-to-r dark:from-primary_20 dark:to-primary_10">
+        <div className="flex w-full items-center justify-center p-6 dark:shadow-none landscape_max:flex landscape_max:justify-center">
+          <div className="flex w-[100%] items-center justify-evenly sm:w-[65%]">
+            <div
+              className={`${deviconBoxStyles} ml-0 rounded-full bg-white_gray text-center`}
+            >
+              {<Devicon name="nextjs" type="line" />}
+            </div>
+            <div className={`${deviconBoxStyles}dark:bg-transparent`}>
+              {<Devicon name="react" />}
+            </div>
+            <div className={`${deviconBoxStyles}`}>
+              {<Devicon name="typescript" />}
+            </div>
+            <div className={`${deviconBoxStyles}`}>
+              {<Devicon name="tailwindcss" type="plain" />}
             </div>
           </div>
         </div>
