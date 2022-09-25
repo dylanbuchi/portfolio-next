@@ -4,8 +4,10 @@ import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
 import ContactForm from 'components/Contact/ContactForm';
 import SocialLink from 'components/SocialLink';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [messageOverflow, setMessageOverflow] = useState(false);
   return (
     <div className="to-add-blur h-screen overflow-y-auto bg-[#c5d6e5] dark:bg-primary_10">
       <h2 className="sr-only">Contact information</h2>
@@ -57,8 +59,13 @@ const Contact = () => {
             </div>
           </ul>
         </div>
-        <div className="h-[full] px-6 sm:px-10 lg:col-span-2 lg:my-auto xl:p-12">
+        <div
+          className={`lg: p-8  pt-1 sm:px-10  lg:col-span-2 ${
+            messageOverflow ? ' lg:overflow-auto' : ' lg:overflow-hidden'
+          }`}
+        >
           <ContactForm
+            setMessageOverflow={setMessageOverflow}
             className={'grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8'}
           />
         </div>
