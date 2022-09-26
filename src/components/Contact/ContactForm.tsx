@@ -195,7 +195,7 @@ const ContactForm = ({
         </button>
       </div>
       {formSubmittedWithSuccess && (
-        <div className="absolute bottom-0 right-0 -left-0 sm:bottom-8">
+        <div className="absolute  -bottom-5 right-0 -left-0 sm:bottom-0">
           <SuccessAlert
             onClick={setFormSubmittedWithSuccess}
             message="Your message has been sent with success!"
