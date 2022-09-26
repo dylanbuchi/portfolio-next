@@ -5,6 +5,7 @@ import {
   Dispatch,
   FormEvent,
   SetStateAction,
+  useCallback,
   useEffect,
   useState,
 } from 'react';
@@ -89,14 +90,28 @@ const ContactForm = ({
   };
 
   useEffect(() => {
-    setMessageOverflow(query.message ? true : false);
-
     const { email } = query;
+
+    if (!email) {
+      setSubmitBtnIsDisabled(true);
+      return;
+    }
 
     const isEmailValid = emailChecker(email);
     const areValuesFilled = Object.values(query).every((item) => item !== '');
 
     setSubmitBtnIsDisabled(!(isEmailValid && areValuesFilled));
+  }, [query]);
+
+  useEffect(() => {
+    const { message } = query;
+
+    if (!message) {
+      setMessageOverflow(false);
+      return;
+    }
+
+    setMessageOverflow(true);
   }, [query, setMessageOverflow]);
 
   return (
