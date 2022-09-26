@@ -40,4 +40,12 @@ export type ProjectTechs = {
   flask: ProjectIcons;
   materialUi: ProjectIcons;
   redux: ProjectIcons;
+  git: ProjectIcons;
+  github: ProjectIcons;
+  bash: ProjectIcons;
+  nodejs: ProjectIcons;
+  bootstrap: ProjectIcons;
+  sass: ProjectIcons;
+  nextjs: ProjectIcons;
+  tailwind: ProjectIcons;
 };

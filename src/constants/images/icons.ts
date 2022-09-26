@@ -15,6 +15,14 @@ import flask from '/public/assets/images/icons/flask/flask-original.svg';
 import redux from '/public/assets/images/icons/redux/redux-original.svg';
 import materialUi from '/public/assets/images/icons/materialui/materialui-original.svg';
 
+import bash from '/public/assets/images/icons/bash/bash-original.svg';
+import git from '/public/assets/images/icons/git/git-original.svg';
+import github from '/public/assets/images/icons/github/github-original.svg';
+import nodejs from '/public/assets/images/icons/nodejs/nodejs-original.svg';
+import sass from '/public/assets/images/icons/sass/sass-original.svg';
+import bootstrap from '/public/assets/images/icons/bootstrap/bootstrap-original.svg';
+import nextjs from '/public/assets/images/icons/nextjs/nextjs-original.svg';
+
 export const icons = {
   typeScript,
   javaScript,
@@ -32,4 +40,11 @@ export const icons = {
   flask,
   materialUi,
   redux,
+  bash,
+  git,
+  github,
+  nodejs,
+  sass,
+  bootstrap,
+  nextjs,
 };

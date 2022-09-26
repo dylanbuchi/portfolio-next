@@ -25,7 +25,7 @@ export const PROJECT_NAMES = {
   hangman: 'hangman',
 };
 
-const TECHS: ProjectTechs = {
+export const TECHS: ProjectTechs = {
   python: { name: 'Python', icon: icons.python, id: uuidv4() },
   django: { name: 'Django', icon: icons.django, id: uuidv4() },
   css: { name: 'Css', icon: icons.css, id: uuidv4() },
@@ -41,6 +41,14 @@ const TECHS: ProjectTechs = {
   flask: { name: 'Flask', icon: icons.flask, id: uuidv4() },
   redux: { name: 'Redux', icon: icons.redux, id: uuidv4() },
   materialUi: { name: 'Material UI', icon: icons.materialUi, id: uuidv4() },
+  git: { name: 'Git', icon: icons.git, id: uuidv4() },
+  github: { name: 'Github', icon: icons.github, id: uuidv4() },
+  bash: { name: 'Bash', icon: icons.bash, id: uuidv4() },
+  nodejs: { name: 'NodeJs', icon: icons.nodejs, id: uuidv4() },
+  bootstrap: { name: 'Bootstrap', icon: icons.bootstrap, id: uuidv4() },
+  nextjs: { name: 'NextJs', icon: icons.nextjs, id: uuidv4() },
+  sass: { name: 'Sass', icon: icons.sass, id: uuidv4() },
+  tailwind: { name: 'Tailwind Css', icon: icons.tailwind, id: uuidv4() },
 } as const;
 
 export const PROJECT_IMAGE_SRC_BASE_URL =
