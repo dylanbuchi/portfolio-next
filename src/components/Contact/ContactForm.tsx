@@ -1,14 +1,14 @@
-import { Props } from 'interfaces/props';
-import SuccessAlert from 'components/SuccessAlert';
 import {
   ChangeEvent,
   Dispatch,
   FormEvent,
   SetStateAction,
-  useCallback,
   useEffect,
   useState,
 } from 'react';
+
+import SuccessAlert from 'components/Alerts/SuccessAlert';
+import { Props } from 'interfaces/props';
 import { emailChecker } from 'utilities/functions';
 
 interface ContactFormProps extends Props {
