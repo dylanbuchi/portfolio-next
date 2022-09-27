@@ -9,9 +9,9 @@ const user = {
   name: 'Dylan Buchi',
   role: 'Self-taught Software Engineer',
   imgSrc: profileImage.src,
-  bio: `
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ratione consectetur quas voluptatem, esse accusantium, consequatur explicabo, tempora expedita voluptatum. Veniam nulla consectetur cum, blanditiis consequatur odio amet facilis.
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima tempore ratione consectetur quas voluptatem, esse accusantium, consequatur explicabo, tempora expedita voluptatum. Veniam nulla consectetur cum, blanditiis consequatur odio amet facilis.
+  bio: `I started my coding journey in 2019. Since then, I'm always learning and expanding my skill set. I've freelanced, contributed to open-source and built many projects that are publicly available on my Github account.
+One of the things that made me fall in love with software development is that the tech industry is constantly evolving, which keeps things interesting and allows me to grow and acquire new skills.
+Currently focused on web development, web3 and blockchain.
   `,
 };
 
@@ -42,7 +42,7 @@ const AboutMe = () => {
               <h1 className="mb-2 text-2xl font-bold dark:text-white_gray">
                 About me
               </h1>
-              <p className="">{user.bio}</p>
+              <p className="whitespace-pre-line">{user.bio}</p>
             </div>
             <SkillsCard />
           </div>
