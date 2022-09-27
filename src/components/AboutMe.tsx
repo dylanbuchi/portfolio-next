@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 import SkillsCard from './Cards/SkillsCard';
+import CertificatesCarousel from './CertificatesCarousel';
+import Divider from './Divider';
 import profileImage from '/public/assets/images/pages/about-me/profile.jpg';
 
 const user = {
@@ -35,7 +37,7 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <div className="sm:w-[60%]">
+          <div className="sm:w-[70%]">
             <div className="mt-10 rounded-xl bg-white_gray p-6 text-lg dark:bg-primary_20 sm:m-10 sm:mt-0">
               <h1 className="mb-2 text-2xl font-bold dark:text-white_gray">
                 About me
@@ -43,6 +45,14 @@ const AboutMe = () => {
               <p className="">{user.bio}</p>
             </div>
             <SkillsCard />
+          </div>
+        </div>
+        <div className="mt-10">
+          <Divider name="Certificates" />
+        </div>
+        <div className=" mt-2 flex justify-center">
+          <div className="w-[90%] sm:w-[40%] ">
+            <CertificatesCarousel />
           </div>
         </div>
       </div>
