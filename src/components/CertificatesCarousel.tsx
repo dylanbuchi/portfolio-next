@@ -12,7 +12,7 @@ const CertificatesCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     accessibility: true,
