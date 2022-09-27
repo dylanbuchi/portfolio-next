@@ -28,7 +28,6 @@ const NavItemList = ({
     ['Home', '/'],
     ['About me', '/about-me'],
     ['Projects', '/projects'],
-    ['Certificates', '/certificates'],
     ['Contact', '/contact'],
   ]);
 
