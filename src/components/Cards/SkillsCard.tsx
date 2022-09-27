@@ -59,7 +59,7 @@ const SkillsCard = () => {
     <div className="mt-10 rounded-xl bg-white_gray p-6 text-lg  dark:bg-primary_20 dark:text-white_gray sm:m-10 sm:mt-10 sm:mb-0">
       <h1 className="text-2xl font-bold">Skills</h1>
       <dl>
-        <dt className="text-md mt-2  font-semibold">Frontend:</dt>
+        <dt className="text-md mt-3 font-semibold">Frontend:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span>{renderIcon(TECHS.nextjs)}</span>
           <span>{renderIcon(TECHS.react)}</span>
@@ -70,7 +70,7 @@ const SkillsCard = () => {
           <span>{renderIcon(TECHS.css)}</span>
           <span>{renderIcon(TECHS.html)}</span>
         </dd>
-        <dt className="text-md mt-2 font-semibold">Backend:</dt>
+        <dt className="text-md mt-3 font-semibold">Backend:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span>{renderIcon(TECHS.python)}</span>
           <span>{renderIcon(TECHS.java)}</span>
@@ -78,21 +78,20 @@ const SkillsCard = () => {
           <span>{renderIcon(TECHS.nodejs)}</span>
           <span>{renderIcon(TECHS.django)}</span>
         </dd>
-        <dt className="text-md mt-2 font-semibold">Mobile:</dt>
+        <dt className="text-md mt-3 font-semibold">Mobile:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span className="">{renderIcon(TECHS.flutter)}</span>
           <span className="">{renderIcon(TECHS.dart)}</span>
         </dd>
-        <dt className="text-md mt-2 font-semibold">Databases:</dt>
+        <dt className="text-md mt-3 font-semibold">Databases:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span className="">{renderIcon(TECHS.mongodb)}</span>
           <span className="">{renderIcon(TECHS.sqlite)}</span>
         </dd>
 
-        <dt className="text-md mt-2 font-semibold">Version Control:</dt>
+        <dt className="text-md mt-3 font-semibold">Version Control:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span className="">{renderIcon(TECHS.git)}</span>
-          <span className="">{renderIcon(TECHS.github)}</span>
         </dd>
       </dl>
     </div>
