@@ -49,6 +49,8 @@ export const TECHS: ProjectTechs = {
   nextjs: { name: 'NextJs', icon: icons.nextjs, id: uuidv4() },
   sass: { name: 'Sass', icon: icons.sass, id: uuidv4() },
   tailwind: { name: 'Tailwind Css', icon: icons.tailwind, id: uuidv4() },
+  firebase: { name: 'Firebase', icon: icons.firebase, id: uuidv4() },
+  mysql: { name: 'MySql', icon: icons.mysql, id: uuidv4() },
 } as const;
 
 export const PROJECT_IMAGE_SRC_BASE_URL =
@@ -111,7 +113,7 @@ const PROJECTS: { [name: string]: ProjectType } = {
 
   [PROJECT_NAMES.movies]: {
     name: PROJECT_NAMES.movies,
-    techs: [TECHS.flutter, TECHS.dart],
+    techs: [TECHS.flutter, TECHS.dart, TECHS.firebase],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/63264632-f20c0100-c261-11e9-8ff4-6ee8599ac964.png`,
     description:
       'A movies mobile app: Login, watch trailers and buy some awesome movies.',

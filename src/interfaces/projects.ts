@@ -48,4 +48,6 @@ export type ProjectTechs = {
   sass: ProjectIcons;
   nextjs: ProjectIcons;
   tailwind: ProjectIcons;
+  firebase: ProjectIcons;
+  mysql: ProjectIcons;
 };

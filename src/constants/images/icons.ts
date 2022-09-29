@@ -22,6 +22,8 @@ import nodejs from '/public/assets/images/icons/nodejs/nodejs-original.svg';
 import sass from '/public/assets/images/icons/sass/sass-original.svg';
 import bootstrap from '/public/assets/images/icons/bootstrap/bootstrap-original.svg';
 import nextjs from '/public/assets/images/icons/nextjs/nextjs-original.svg';
+import firebase from '/public/assets/images/icons/firebase/firebase-plain.svg';
+import mysql from '/public/assets/images/icons/mysql/mysql-plain.svg';
 
 export const icons = {
   typeScript,
@@ -47,4 +49,6 @@ export const icons = {
   sass,
   bootstrap,
   nextjs,
+  firebase,
+  mysql,
 };
