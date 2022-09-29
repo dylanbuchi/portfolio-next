@@ -17,7 +17,7 @@ Currently focused on web development, web3 and blockchain.
 
 const AboutMe = () => {
   return (
-    <div className="to-add-blur mb-auto h-full overflow-auto bg-primary_90 dark:bg-primary_10">
+    <div className="custom-scrollbar to-add-blur mb-auto h-full overflow-auto bg-primary_90 dark:bg-primary_10">
       <div className="my-6 px-5 sm:pb-0">
         <div className="flex flex-col sm:flex-row-reverse sm:items-start sm:justify-center">
           <div>

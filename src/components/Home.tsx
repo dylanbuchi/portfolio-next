@@ -14,7 +14,7 @@ const Home = () => {
     'ml-[0.1rem] cursor-pointer rounded-xl bg-[#dae6f2] p-3 text-3xl shadow-sm shadow-primary_10 transition hover:scale-150 hover:bg-transparent hover:shadow-none dark:bg-[#254d77] dark:shadow-none dark:hover:bg-transparent';
 
   return (
-    <div className="to-add-blur flex h-full flex-col overflow-auto text-base sm:items-center sm:overflow-hidden">
+    <div className="custom-scrollbar to-add-blur flex h-full flex-col overflow-auto text-base sm:items-center sm:overflow-hidden">
       <div className="mt-auto  p-10 sm:p-0">
         <h2 className="text-2xl tracking-wide">
           {helloMsg}

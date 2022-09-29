@@ -31,7 +31,7 @@ const ProjectsPage: NextPage = () => {
   return (
     <>
       <MyHead title="Projects" imageSrc={imageSrc} />
-      <div className="to-add-blur -mb-6 overflow-y-auto">
+      <div className="to-add-blur custom-scrollbar -mb-6 overflow-y-auto">
         <ProjectList projects={projects} />
       </div>
     </>
