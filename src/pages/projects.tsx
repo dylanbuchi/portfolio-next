@@ -8,6 +8,8 @@ import MyHead from 'components/MyHead';
 import ProjectList from 'components/Projects/ProjectList';
 
 const ProjectsPage: NextPage = () => {
+  const imageSrc =
+    'https://raw.githubusercontent.com/dylanbuchi/portfolio-next/main/public/assets/images/pages/projects/projects-page.jpg?token=GHSAT0AAAAAABLHAUH3FWJ2EW4WYWAO2XOIYZVVJ4Q';
   const itemToSetGif = '31-days-of-code';
 
   const [projects, setProjects] = useState(() => PROJECTS_LIST);
@@ -28,7 +30,7 @@ const ProjectsPage: NextPage = () => {
 
   return (
     <>
-      <MyHead title="Projects" />
+      <MyHead title="Projects" imageSrc={imageSrc} />
       <div className="to-add-blur mb-auto overflow-y-auto">
         <ProjectList projects={projects} />
       </div>

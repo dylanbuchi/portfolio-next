@@ -8,7 +8,7 @@ interface MyHeadProps {
 }
 
 const IMG_SRC_DEFAULT =
-  'https://user-images.githubusercontent.com/52018183/97459431-89ff8300-191a-11eb-93c2-36a04db97006.png';
+  'https://raw.githubusercontent.com/dylanbuchi/portfolio-next/main/public/assets/images/pages/home/home-page.jpg?token=GHSAT0AAAAAABLHAUH2IZPW4OMLFJZBGKOEYZVVDRQ';
 
 const URL_DEFAULT = 'https://dylanbuchi.netlify.app';
 
