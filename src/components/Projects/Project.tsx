@@ -60,7 +60,7 @@ const Project = ({ project }: ProjectProps) => {
   };
 
   return (
-    <li className="relative mt-5 flex h-full  flex-col items-stretch rounded-2xl bg-primary_80 shadow-sm shadow-primary_10 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-none lg:-mt-[1rem] lg:w-[115%] lg:scale-[0.75] lg:p-0 lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
+    <li className="relative mt-5 flex h-full  flex-col items-stretch rounded-2xl bg-primary_80 shadow-sm shadow-gray-600 transition hover:scale-105 dark:bg-primary_20 dark:text-gray-300 dark:shadow-black lg:-mt-[1rem] lg:w-[115%] lg:scale-[0.75] lg:p-0 lg:hover:scale-[0.8] landscape_max:m-0 landscape_max:mt-14 landscape_max:scale-[0.95] hover:landscape_max:scale-[1] landscape_max_height_sm:mt-[0rem] landscape_max_height_sm:scale-[0.8] hover:landscape_max_height_sm:scale-[0.85]">
       <div className="relative h-56 overflow-hidden rounded-2xl rounded-b-none">
         <Image
           src={project.imgSrc}
