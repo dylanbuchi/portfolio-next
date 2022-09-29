@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -44,7 +44,7 @@
   }
 
   .devicons:hover::after {
-    content: '';
+    content: "";
     color: #fdfdfd;
   }
 
@@ -64,7 +64,7 @@
   }
 
   .home-icons-after {
-    @apply text-center text-[0.6rem] after:absolute after:top-[95%] after:left-[10%] after:-ml-3 after:font-bold after:text-gray-200 after:dark:text-gray-300 md:text-sm md:after:top-[20%] md:after:left-[150%];
+    @apply text-center text-[0.6rem] after:absolute after:top-[95%] after:left-[10%] after:-ml-3 after:font-bold after:text-gray-200 after:dark:text-gray-300 md:text-sm md:after:top-[25%] md:after:left-[150%];
   }
 
   .input-form {
