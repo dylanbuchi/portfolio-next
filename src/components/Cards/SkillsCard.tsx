@@ -56,7 +56,7 @@ const SkillsCard = () => {
   };
 
   return (
-    <div className="mt-10 rounded-xl bg-white_gray p-6 text-lg  dark:bg-primary_20 dark:text-white_gray sm:m-10 sm:mt-10 sm:mb-0">
+    <div className="mt-10 rounded-xl  bg-white_gray p-6 text-lg shadow-sm shadow-gray-600 dark:bg-primary_20  dark:text-white_gray dark:shadow-black sm:m-10 sm:mt-10 sm:mb-0">
       <h1 className="text-2xl font-bold">Skills</h1>
       <dl>
         <dt className="text-md mt-3 font-semibold">Frontend:</dt>

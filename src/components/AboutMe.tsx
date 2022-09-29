@@ -21,14 +21,16 @@ const AboutMe = () => {
       <div className="my-6 px-5 sm:pb-0">
         <div className="flex flex-col sm:flex-row-reverse sm:items-start sm:justify-center">
           <div>
-            <Image
-              className="max-w-[100%] rounded-xl object-cover text-center shadow-lg "
-              src={user.imgSrc}
-              alt="profile"
-              width="100%"
-              height="100%"
-              layout="responsive"
-            />
+            <div className="rounded-xl shadow-sm shadow-gray-600 dark:shadow-black">
+              <Image
+                className="text-centers max-w-[100%] rounded-xl object-cover"
+                src={user.imgSrc}
+                alt="profile"
+                width="100%"
+                height="100%"
+                layout="responsive"
+              />
+            </div>
             <div className="text-lg leading-6">
               <h2 className="mt-2 font-semibold">{user.name}</h2>
               <h3 className="mb-2 font-bold text-blue-800 dark:text-accent_primary">
@@ -38,7 +40,7 @@ const AboutMe = () => {
           </div>
 
           <div className="sm:w-[70%]">
-            <div className="mt-10 rounded-xl bg-white_gray p-6 text-lg dark:bg-primary_20 sm:m-10 sm:mt-0">
+            <div className="mt-10 rounded-xl  bg-white_gray p-6 text-lg  shadow-sm shadow-gray-600 dark:bg-primary_20 dark:shadow-black sm:m-10 sm:mt-0">
               <h1 className="mb-2 text-2xl font-bold dark:text-white_gray">
                 About me
               </h1>
