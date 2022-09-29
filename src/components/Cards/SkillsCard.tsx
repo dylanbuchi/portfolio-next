@@ -25,20 +25,20 @@ const SkillsCard = () => {
         break;
 
       case checkItem(
-        ['django', 'java', 'flask', 'bash', 'github', 'sqlite'],
+        ['django', 'java', 'flask', 'bash', 'github', 'sqlite', 'mysql'],
         techNameLower,
       ):
         iconStyles.push(
-          'rounded-sm bg-transparent dark:bg-white_gray ml-[0.32em]',
+          'rounded-sm bg-transparent dark:bg-gray-200 ml-[0.32em]',
         );
         break;
 
       case 'redux':
-        iconStyles.push('rounded-3xl bg-transparent dark:bg-white_gray');
+        iconStyles.push('rounded-3xl bg-transparent dark:bg-gray-200');
         break;
 
       case 'nextjs':
-        iconStyles.push('rounded-3xl bg-transparent dark:bg-white_gray');
+        iconStyles.push('rounded-3xl bg-transparent dark:bg-gray-200');
         break;
     }
     return (
@@ -77,6 +77,7 @@ const SkillsCard = () => {
           <span>{renderIcon(TECHS.bash)}</span>
           <span>{renderIcon(TECHS.nodejs)}</span>
           <span>{renderIcon(TECHS.django)}</span>
+          <span>{renderIcon(TECHS.flask)}</span>
         </dd>
         <dt className="text-md mt-3 font-semibold">Mobile:</dt>
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
@@ -87,6 +88,8 @@ const SkillsCard = () => {
         <dd className="-mt-1 ml-8 flex-wrap text-base  font-medium">
           <span className="">{renderIcon(TECHS.mongodb)}</span>
           <span className="">{renderIcon(TECHS.sqlite)}</span>
+          <span className="">{renderIcon(TECHS.firebase)}</span>
+          <span className="">{renderIcon(TECHS.mysql)}</span>
         </dd>
 
         <dt className="text-md mt-3 font-semibold">Version Control:</dt>

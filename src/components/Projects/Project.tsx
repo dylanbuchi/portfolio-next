@@ -32,12 +32,15 @@ const Project = ({ project }: ProjectProps) => {
 
         case checkItem(['django', 'java', 'flask'], techNameLower):
           iconStyles.push(
-            'rounded-sm bg-transparent dark:bg-white_gray ml-[0.32em]',
+            'rounded-sm bg-transparent dark:bg-gray-200 ml-[0.32em]',
           );
           break;
 
         case 'redux':
-          iconStyles.push('rounded-3xl bg-transparent dark:bg-white_gray');
+          iconStyles.push('rounded-3xl bg-transparent dark:bg-gray-200');
+          break;
+        case 'firebase':
+          iconStyles.push('h-[1.4em] w-[1.4em], ml-[0.1em]');
           break;
       }
 
