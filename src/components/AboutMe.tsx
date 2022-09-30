@@ -1,21 +1,61 @@
+import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import SkillsCard from './Cards/SkillsCard';
 import CertificatesCarousel from './CertificatesCarousel';
 import Divider from './Divider';
 import profileImage from '/public/assets/images/pages/about-me/profile.jpg';
 
+import { v4 as uuidv4 } from 'uuid';
+
 const user = {
   name: 'Dylan Buchi',
   role: 'Self-taught Software Engineer',
   imgSrc: profileImage.src,
-  bio: `I started my coding journey in 2019. Since then, I'm always learning and expanding my skill set. I've freelanced, contributed to open-source and built many projects that are publicly available on my Github account.
-One of the things that made me fall in love with software development is that the tech industry is constantly evolving, which keeps things interesting and allows me to grow and acquire new skills.
-Currently focused on web development, web3 and blockchain.
+  bio: `I started my coding journey in 2019. Since then I've studied techs, freelanced, contributed to open-source, and built projects that are publicly available on my Github account.
+
+  One of the things that made me fall in love with software development is that the tech industry is constantly evolving, which keeps things interesting and allows me to grow and acquire new skills.
+
+  I'm always learning and improving to be a better developer and now I'm currently focused on web development, web3, and blockchain.
   `,
 };
 
 const AboutMe = () => {
+  const displayBio = () => {
+    const linkStyles =
+      'blue-900 border-b-[3px] border-blue-900  border-x-white_gray border-opacity-60 font-medium text-blue-900 dark:border-accent_primary dark:border-opacity-70 dark:text-accent_primary';
+    return user.bio.split(' ').map((word) => {
+      const wordWithSpace = `${word} `;
+      if (['github', 'projects'].includes(word.toLocaleLowerCase())) {
+        if (word.toLocaleLowerCase() === 'github')
+          return (
+            <Link
+              key={uuidv4()}
+              href={`${SOCIAL_LINKS.github.website}/${USERNAME}`}
+            >
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyles}
+              >
+                {wordWithSpace}
+              </a>
+            </Link>
+          );
+        else {
+          return (
+            <Link key={uuidv4()} href={`/projects`}>
+              <a className={`${linkStyles} pb-[0.1em]`}>{wordWithSpace}</a>
+            </Link>
+          );
+        }
+      }
+
+      return wordWithSpace;
+    });
+  };
+
   return (
     <div className="custom-scrollbar to-add-blur mb-auto h-full overflow-auto bg-primary_90 dark:bg-primary_10">
       <div className="my-6 px-5 sm:pb-0">
@@ -44,7 +84,9 @@ const AboutMe = () => {
               <h1 className="mb-2 text-2xl font-bold dark:text-white_gray">
                 About me
               </h1>
-              <p className="whitespace-pre-line">{user.bio}</p>
+              <p className="max-w-[1280px] whitespace-pre-line leading-snug">
+                {displayBio()}
+              </p>
             </div>
             <SkillsCard />
           </div>
