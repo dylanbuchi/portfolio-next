@@ -3,11 +3,16 @@ import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
 
 import ContactForm from 'components/Contact/ContactForm';
 import SocialLink from 'components/SocialLink';
+
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { useState } from 'react';
+import TextWithCopyBtn from 'components/Buttons/TextWithCopyBtn';
 
 const Contact = () => {
   const [messageOverflow, setMessageOverflow] = useState(false);
+
+  const phoneNumber = '+55 32 98410 3562';
+  const email = 'devybuchi@gmail.com';
 
   return (
     <div className="custom-scrollbar to-add-blur h-full overflow-y-auto bg-[#c5d6e5] dark:bg-primary_10">
@@ -22,14 +27,14 @@ const Contact = () => {
             </dt>
             <dd className="flex text-base">
               <PhoneIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
-              <span className="ml-3">+55 32 98410 3562</span>
+              <TextWithCopyBtn text={phoneNumber} />
             </dd>
             <dt>
               <span className="sr-only">Email</span>
             </dt>
             <dd className="flex text-base ">
               <MailIcon className="h-6 w-6 flex-shrink-0" aria-hidden="true" />
-              <span className="ml-3">devybuchi@gmail.com</span>
+              <TextWithCopyBtn text={email} />
             </dd>
           </dl>
           <ul className="mt-8 flex w-fit space-x-12  rounded-md bg-gradient-to-t from-[#91c1dc] to-[#dae3eb] p-4 shadow-sm shadow-gray-500 dark:from-[#171d25]  dark:to-[#395672] dark:shadow-inner dark:shadow-primary_10">
