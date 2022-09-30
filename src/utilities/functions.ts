@@ -56,4 +56,8 @@ export const emailChecker = (email: string) => {
   return domainName.split('').filter((char) => char === '.').length;
 };
 
+export const copyTextToClipboard = async (text: string) => {
+  await navigator.clipboard?.writeText(text);
+};
+
 export default setClassNames;
