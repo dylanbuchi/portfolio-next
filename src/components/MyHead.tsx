@@ -10,7 +10,7 @@ interface MyHeadProps {
 const IMG_SRC_DEFAULT =
   'https://raw.githubusercontent.com/dylanbuchi/portfolio-next/main/public/assets/images/pages/home/home-page.jpg?token=GHSAT0AAAAAABLHAUH2IZPW4OMLFJZBGKOEYZVVDRQ';
 
-const URL_DEFAULT = 'https://dylanbuchi.netlify.app';
+const URL_DEFAULT = 'https://dylanbuchi.com';
 
 const TITLE_DEFAULT = 'Dylan Buchi: Portfolio';
 const DESCRIPTION_DEFAULT = 'The personal portfolio of Dylan Buchi';
