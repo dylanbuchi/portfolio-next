@@ -24,7 +24,7 @@ const user = {
 const AboutMe = () => {
   const displayBio = () => {
     const linkStyles =
-      'blue-900 border-b-[3px] border-blue-900  border-x-white_gray border-opacity-60 font-medium text-blue-900 dark:border-accent_primary dark:border-opacity-70 dark:text-accent_primary';
+      'blue-900 border-b-[0.22em] border-blue-900 border-x-white_gray border-opacity-50 dark:border-accent_primary dark:border-opacity-60  inline-block h-[1.35em] mr-1';
     return user.bio.split(' ').map((word) => {
       const wordWithSpace = `${word} `;
       if (['github', 'projects'].includes(word.toLocaleLowerCase())) {
@@ -46,7 +46,9 @@ const AboutMe = () => {
         else {
           return (
             <Link key={uuidv4()} href={`/projects`}>
-              <a className={`${linkStyles} pb-[0.1em]`}>{wordWithSpace}</a>
+              <a className={`${linkStyles}  h-[1.51em] pb-[0.1em]`}>
+                {wordWithSpace}
+              </a>
             </Link>
           );
         }
@@ -80,7 +82,7 @@ const AboutMe = () => {
           </div>
 
           <div className="sm:w-[70%]">
-            <div className="mt-10 rounded-xl  bg-white_gray p-6 text-lg  shadow-sm shadow-gray-600 dark:bg-primary_20 dark:shadow-black sm:m-10 sm:mt-0">
+            <div className="mt-10 rounded-xl bg-white_gray p-6 text-lg  shadow-sm shadow-gray-600 dark:bg-primary_20 dark:shadow-black sm:m-10 sm:mt-0">
               <h1 className="mb-2 text-2xl font-bold dark:text-white_gray">
                 About me
               </h1>
