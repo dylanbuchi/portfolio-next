@@ -21,7 +21,7 @@ const CertificatesCarousel = () => {
     fade: false,
     pauseOnHover: false,
     appendDots: (dots: ReactNode) => (
-      <ul>{<div className="mb-2 dark:hidden">{dots}</div>}</ul>
+      <ul>{<div className="mb-2">{dots}</div>}</ul>
     ),
   };
 
