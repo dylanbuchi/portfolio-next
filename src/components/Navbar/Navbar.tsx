@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 
 import MobileMenuButton from 'components/Buttons/MobileMenuButton';
@@ -12,6 +12,10 @@ const NavBar = () => {
   const [activeNavbarItem, setActiveNavbarItem] = useState(() => {
     return router.asPath;
   });
+
+  useEffect(() => {
+    if (activeNavbarItem !== router.asPath) setActiveNavbarItem(router.asPath);
+  }, [activeNavbarItem, setActiveNavbarItem, router.asPath]);
 
   const handleActiveNavbarItem = (route: string) => {
     setActiveNavbarItem(route);
