@@ -1,8 +1,8 @@
-import { MutableRefObject } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import NavItem from './NavItem';
 
 interface NavItemProps {
-  handleActiveNavbarItem: (route: string) => void;
+  previousActiveItem?: string;
   isMobile?: boolean;
   activeNavbarItem: string;
   closePanel?: (
@@ -19,7 +19,7 @@ type Route = string;
 type NavItems = [Name, Route];
 
 const NavItemList = ({
-  handleActiveNavbarItem,
+  previousActiveItem: previousItem,
   activeNavbarItem,
   isMobile = false,
   closePanel,
@@ -30,6 +30,10 @@ const NavItemList = ({
     ['Projects', '/projects'],
     ['Contact', '/contact'],
   ]);
+
+  useEffect(() => {
+    if (previousItem !== activeNavbarItem) closePanel && closePanel();
+  }, [previousItem, activeNavbarItem, closePanel]);
 
   const navItemActiveStyle =
     'dark:bg-primary_10 bg-primary_20 text-white cursor-default pointer-events-none sm:p-2 md:px-3 md:py-2';
@@ -42,11 +46,7 @@ const NavItemList = ({
           isMobile={isMobile}
           key={route}
           name={name}
-          handleActiveNavbarItem={() => {
-            isMobile && closePanel && closePanel();
-            handleActiveNavbarItem(route);
-          }}
-          className={`rounded-md px-3 py-2 text-sm font-medium transition duration-100 sm:p-2 md:px-3 md:py-2 ${
+          className={`rounded-md px-3 py-2 text-sm font-medium sm:p-2 md:px-3 md:py-2 ${
             route === activeNavbarItem.toLocaleLowerCase()
               ? navItemActiveStyle
               : ''

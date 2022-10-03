@@ -7,13 +7,11 @@ interface NavItemProps {
   name: string;
   href?: string;
   className?: string;
-  handleActiveNavbarItem: React.MouseEventHandler<HTMLAnchorElement>;
   isMobile?: boolean;
 }
 
 const NavItem = ({
   name,
-  handleActiveNavbarItem,
   isMobile = false,
   className = '',
   href = '/#',
@@ -25,21 +23,11 @@ const NavItem = ({
   const display = () =>
     isMobile ? (
       <Disclosure.Button as={Link} href={href}>
-        <a
-          onClick={handleActiveNavbarItem}
-          className={setClassNames(mobileStyle, className)}
-        >
-          {name}
-        </a>
+        <a className={setClassNames(mobileStyle, className)}>{name}</a>
       </Disclosure.Button>
     ) : (
       <Link href={href}>
-        <a
-          onClick={handleActiveNavbarItem}
-          className={setClassNames(defaultStyle, className)}
-        >
-          {name}
-        </a>
+        <a className={setClassNames(defaultStyle, className)}>{name}</a>
       </Link>
     );
 

@@ -9,17 +9,18 @@ import NavItemList from './NavItemList';
 const NavBar = () => {
   const router = useRouter();
 
-  const [activeNavbarItem, setActiveNavbarItem] = useState(() => {
-    return router.asPath;
-  });
+  const [activeNavbarItem, setActiveNavbarItem] = useState<string>('');
+  const [previousActiveItem, setPreviousActiveItem] = useState<string>('');
 
   useEffect(() => {
     if (activeNavbarItem !== router.asPath) setActiveNavbarItem(router.asPath);
-  }, [activeNavbarItem, setActiveNavbarItem, router.asPath]);
-
-  const handleActiveNavbarItem = (route: string) => {
-    setActiveNavbarItem(route);
-  };
+    setPreviousActiveItem(activeNavbarItem);
+  }, [
+    activeNavbarItem,
+    setActiveNavbarItem,
+    router.asPath,
+    setPreviousActiveItem,
+  ]);
 
   const itsNot404Page = router.pathname !== '/404';
 
@@ -42,10 +43,7 @@ const NavBar = () => {
                 <div className="flex items-center">
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex items-center space-x-4">
-                      <NavItemList
-                        handleActiveNavbarItem={handleActiveNavbarItem}
-                        activeNavbarItem={activeNavbarItem}
-                      />
+                      <NavItemList activeNavbarItem={activeNavbarItem} />
                     </div>
                   </div>
                 </div>
@@ -58,7 +56,7 @@ const NavBar = () => {
               {({ close }) => (
                 <div className="space-y-1 px-2 pt-2 pb-3 text-center">
                   <NavItemList
-                    handleActiveNavbarItem={handleActiveNavbarItem}
+                    previousActiveItem={previousActiveItem}
                     activeNavbarItem={activeNavbarItem}
                     isMobile
                     closePanel={close}
