@@ -47,7 +47,11 @@ const SkillsCard = () => {
         <span
           className={`relative ml-[0.15rem] mr-3 h-4 w-4 ${iconStyles.join(
             ' ',
-          )}`}
+          )} ${
+            techNameLower === 'mongodb' || techNameLower === 'firebase'
+              ? ' -ml-[0.15em] h-[1.24em] w-[1.24em]'
+              : ''
+          } `}
         >
           <Image layout="fill" src={tech.icon} alt={tech.name} />
         </span>
