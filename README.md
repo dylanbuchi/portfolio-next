@@ -1,8 +1,24 @@
 # Welcome to my portfolio
 
-<!-- ![](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png) -->
+## Website: https://dylanbuchi.com
 
-## ⌨️ Commands
+### Built with:
+
+![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+---
+
+![home](./public/assets/images/pages/home/home-page.png)
+![about-me](./public/assets/images/pages/about-me/about-me-page.png)
+![projects](./public/assets/images/pages/projects/projects-page.png)
+![contact](./public/assets/images/pages/contact/contact-page.png)
+
+---
+
+# ⌨️ Commands
 
 All commands are run from the root of the project, from a terminal:
 
