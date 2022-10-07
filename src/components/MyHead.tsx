@@ -28,6 +28,7 @@ const MyHead = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="Dylan Buchi" />
       <meta name="title" content={title} />
+      <meta name="description" content={description} />
 
       {/* OG */}
       <meta name="title" property="og:title" content={title} />
