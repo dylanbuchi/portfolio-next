@@ -68,10 +68,9 @@ const PROJECTS: { [name: string]: ProjectType } = {
     name: PROJECT_NAMES.bigMovies,
     techs: [
       TECHS.react,
+      TECHS.typeScript,
       TECHS.redux,
-      TECHS.javaScript,
       TECHS.materialUi,
-      TECHS.css,
       TECHS.html,
     ],
     imgSrc: `${PROJECT_IMAGE_SRC_BASE_URL}/176925671-87c2daa4-115f-4440-acc7-218e2146701d.png`,
