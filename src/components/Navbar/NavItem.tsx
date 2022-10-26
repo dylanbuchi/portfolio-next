@@ -26,8 +26,8 @@ const NavItem = ({
         <a className={setClassNames(mobileStyle, className)}>{name}</a>
       </Disclosure.Button>
     ) : (
-      <Link href={href}>
-        <a className={setClassNames(defaultStyle, className)}>{name}</a>
+      <Link href={href} className={setClassNames(defaultStyle, className)}>
+        {name}
       </Link>
     );
 

@@ -52,7 +52,7 @@ const Project = ({ project }: ProjectProps) => {
               ' ',
             )}`}
           >
-            <Image layout="fill" src={icon} alt={name} />
+            <Image src={icon} alt={name} fill sizes="100vw" />
           </span>
         </div>
       );
@@ -64,8 +64,7 @@ const Project = ({ project }: ProjectProps) => {
       <div className="relative h-56 overflow-hidden rounded-2xl rounded-b-none">
         <Image
           src={project.imgSrc}
-          alt={project.imgAlt}
-          layout="fill"
+          alt={project.imgAlt ?? 'project'}
           className={`${
             [
               PROJECT_NAMES.findCustomers,
@@ -79,6 +78,8 @@ const Project = ({ project }: ProjectProps) => {
               ? 'object-top'
               : ''
           }`}
+          fill
+          sizes="100vw"
         />
       </div>
       <div className="relative mb-auto bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">

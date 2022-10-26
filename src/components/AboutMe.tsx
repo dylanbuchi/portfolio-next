@@ -13,7 +13,7 @@ const user = {
   name: 'Dylan Buchi',
   role: 'Self-taught Software Engineer',
   imgSrc: profileImage.src,
-  bio: `I started my coding journey in 2019. Since then I've studied techs, freelanced, contributed to open-source, and built projects that are publicly available on my Github account.
+  bio: `I started my coding journey in 2019. Since then I've studied tech, freelanced, contributed to open-source, and built projects that are publicly available on my Github account.
 
   One of the things that made me fall in love with software development is that the tech industry is constantly evolving, which keeps things interesting and allows me to grow and acquire new skills.
 
@@ -33,22 +33,21 @@ const AboutMe = () => {
             <Link
               key={uuidv4()}
               href={`${SOCIAL_LINKS.github.website}/${USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkStyles}
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkStyles}
-              >
-                {wordWithSpace}
-              </a>
+              {wordWithSpace}
             </Link>
           );
         else {
           return (
-            <Link key={uuidv4()} href={`/projects`}>
-              <a className={`${linkStyles}  h-[1.51em] pb-[0.1em]`}>
-                {wordWithSpace}
-              </a>
+            <Link
+              key={uuidv4()}
+              href={`/projects`}
+              className={`${linkStyles}  h-[1.51em] pb-[0.1em]`}
+            >
+              {wordWithSpace}
             </Link>
           );
         }
@@ -62,18 +61,22 @@ const AboutMe = () => {
     <div className="custom-scrollbar to-add-blur mb-auto h-full overflow-auto bg-primary_90 dark:bg-primary_10">
       <div className="my-6 px-5 sm:pb-0">
         <div className="flex flex-col sm:flex-row-reverse sm:items-start sm:justify-center">
-          <div>
-            <div className="rounded-xl shadow-sm shadow-gray-600 dark:shadow-black">
+          <div className="sm:flex sm:flex-col sm:items-center ">
+            <div className="rounded-xl shadow-sm shadow-gray-600 dark:shadow-black sm:h-[75%] sm:w-[75%]">
               <Image
                 className="text-centers max-w-[100%] rounded-xl object-cover"
                 src={user.imgSrc}
                 alt="profile"
-                width="100%"
-                height="100%"
-                layout="responsive"
+                width={100}
+                height={100}
+                sizes="100vw"
+                style={{
+                  maxWidth: 'inherit',
+                  maxHeight: 'inherit',
+                }}
               />
             </div>
-            <div className="text-lg leading-6">
+            <div className="text-lg leading-6 sm:h-[75%] sm:w-[75%]">
               <h2 className="mt-2 font-semibold">{user.name}</h2>
               <h3 className="mb-2 font-bold text-blue-800 dark:text-accent_primary">
                 {user.role}

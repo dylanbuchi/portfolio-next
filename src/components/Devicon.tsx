@@ -18,10 +18,13 @@ export const Devicon = ({
 
   return (
     <Image
+      fill
       className={className}
       alt={name}
-      layout={'fill'}
       src={`/assets/images/icons/${filterName}/${filterName}-${type}.svg`}
+      style={{
+        maxWidth: '100%',
+      }}
     ></Image>
   );
 };

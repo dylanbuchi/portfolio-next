@@ -29,10 +29,12 @@ const PageNotFound404 = () => {
               </div>
             </div>
             <div className="mt-6">
-              <Link href="/">
-                <a className="rounded-m inline-flex items-center rounded border border-transparent bg-primary_10 bg-opacity-90 px-4 py-2 text-sm font-medium hover:bg-opacity-100 hover:text-white">
-                  {backHomeStr}
-                </a>
+              <Link
+                href="/"
+                className="rounded-m inline-flex items-center rounded border border-transparent bg-primary_10 bg-opacity-90 px-4 py-2 text-sm font-medium hover:bg-opacity-100 hover:text-white">
+
+                {backHomeStr}
+
               </Link>
             </div>
           </div>
