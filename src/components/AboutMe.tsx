@@ -33,22 +33,21 @@ const AboutMe = () => {
             <Link
               key={uuidv4()}
               href={`${SOCIAL_LINKS.github.website}/${USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkStyles}
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkStyles}
-              >
-                {wordWithSpace}
-              </a>
+              {wordWithSpace}
             </Link>
           );
         else {
           return (
-            <Link key={uuidv4()} href={`/projects`}>
-              <a className={`${linkStyles}  h-[1.51em] pb-[0.1em]`}>
-                {wordWithSpace}
-              </a>
+            <Link
+              key={uuidv4()}
+              href={`/projects`}
+              className={`${linkStyles}  h-[1.51em] pb-[0.1em]`}
+            >
+              {wordWithSpace}
             </Link>
           );
         }

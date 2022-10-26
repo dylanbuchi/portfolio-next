@@ -14,11 +14,15 @@ const SocialLink = ({
   className = '',
 }: SocialLinkProps) => {
   return (
-    <Link href={href}>
-      <a target="_blank" rel="noopener noreferrer" className={`${className}`}>
-        {renderIcon()}
-      </a>
-    </Link>
+    (<Link
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className}`}>
+
+      {renderIcon()}
+
+    </Link>)
   );
 };
 
