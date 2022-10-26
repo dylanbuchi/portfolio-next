@@ -1,5 +1,5 @@
 import { SOCIAL_LINKS, USERNAME } from 'constants/socials';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 
 import SkillsCard from './Cards/SkillsCard';
@@ -67,8 +67,8 @@ const AboutMe = () => {
                 className="text-centers max-w-[100%] rounded-xl object-cover"
                 src={user.imgSrc}
                 alt="profile"
-                width="100%"
-                height="100%"
+                width={100}
+                height={100}
                 layout="responsive"
               />
             </div>

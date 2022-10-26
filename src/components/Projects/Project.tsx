@@ -1,7 +1,7 @@
 import { PROJECT_NAMES } from 'constants/projects/projects';
 import { ProjectProps } from 'interfaces/projects';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import ProjectButtons from './ProjectButtons';
 
 const Project = ({ project }: ProjectProps) => {
