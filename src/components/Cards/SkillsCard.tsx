@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import { TECHS } from 'constants/projects/projects';
 import { ProjectIcons } from 'interfaces/projects';
@@ -53,7 +53,7 @@ const SkillsCard = () => {
               : ''
           } `}
         >
-          <Image layout="fill" src={tech.icon} alt={tech.name} />
+          <Image src={tech.icon} alt={tech.name} fill sizes="100vw" />
         </span>
       </div>
     );
