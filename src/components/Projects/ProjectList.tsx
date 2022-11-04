@@ -1,4 +1,5 @@
 import type { ProjectType } from 'interfaces/projects';
+import { memo } from 'react';
 import Project from './Project';
 
 interface ProjectListProps {
@@ -17,4 +18,4 @@ const ProjectList = ({ projects }: ProjectListProps) => {
   );
 };
 
-export default ProjectList;
+export default memo(ProjectList);
