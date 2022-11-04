@@ -1,25 +1,25 @@
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 
 import { GIFS } from 'constants/images/python-31-days-code';
 import { PROJECTS_LIST } from 'constants/projects/projects';
 
 import MyHead from 'components/MyHead';
 import ProjectList from 'components/Projects/ProjectList';
+import { ProjectType } from 'interfaces/projects';
 
 const ProjectsPage: NextPage = () => {
   const imageSrc =
     'https://raw.githubusercontent.com/dylanbuchi/portfolio-next/main/public/assets/images/pages/projects/projects-page.jpg?token=GHSAT0AAAAAABLHAUH3FWJ2EW4WYWAO2XOIYZVVJ4Q';
   const itemToSetGif = '31-days-of-code';
 
-  const [projects, setProjects] = useState(() => PROJECTS_LIST);
+  const [projects, setProjects] = useState<ProjectType[]>([]);
 
-  useEffect(() => {
+  const setUpProjects = useCallback(() => {
     const index = Math.floor(Math.random() * GIFS.length);
     const gif = GIFS[index];
-
-    setProjects((prev) =>
-      prev.map((item) => {
+    setProjects(() =>
+      PROJECTS_LIST.map((item) => {
         if (itemToSetGif === item.projectGithubName) {
           return { ...item, imgSrc: gif };
         }
@@ -27,6 +27,10 @@ const ProjectsPage: NextPage = () => {
       }),
     );
   }, []);
+
+  useEffect(() => {
+    setUpProjects();
+  }, [setUpProjects]);
 
   return (
     <>
@@ -38,4 +42,4 @@ const ProjectsPage: NextPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default memo(ProjectsPage);
