@@ -22,52 +22,48 @@ const NavBar = () => {
     setPreviousActiveItem,
   ]);
 
-  const itsNot404Page = router.pathname !== '/404';
-
   return (
-    (itsNot404Page && (
-      <Disclosure
-        as="nav"
-        className=" bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
-      >
-        {({ open }) => (
-          <>
-            <div className="flex justify-between px-2 sm:px-6 lg:px-8">
-              <div className="mr-auto flex items-center font-pacifico">
-                <p className="text-2xl tracking-wide ">Buchi</p>
-              </div>
+    <Disclosure
+      as="nav"
+      className=" bg-primary_40 p-3 text-white_gray dark:bg-primary_20"
+    >
+      {({ open }) => (
+        <>
+          <div className="flex justify-between px-2 sm:px-6 lg:px-8">
+            <div className="mr-auto flex items-center font-pacifico">
+              <p className="text-2xl tracking-wide ">Buchi</p>
+            </div>
+            <div className="flex items-center">
+              <ToggleDarkModeToggle />
+            </div>
+            <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <ToggleDarkModeToggle />
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex items-center space-x-4">
-                      <NavItemList activeNavbarItem={activeNavbarItem} />
-                    </div>
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex items-center space-x-4">
+                    <NavItemList activeNavbarItem={activeNavbarItem} />
                   </div>
                 </div>
-                <div className={'ml-3 sm:hidden'}>
-                  <MobileMenuButton isOpen={open} />
-                </div>
+              </div>
+              <div className={'ml-3 sm:hidden'}>
+                <MobileMenuButton isOpen={open} />
               </div>
             </div>
-            <Disclosure.Panel className="sm:hidden">
-              {({ close }) => (
-                <div className="space-y-1 px-2 pt-2 pb-3 text-center">
-                  <NavItemList
-                    previousActiveItem={previousActiveItem}
-                    activeNavbarItem={activeNavbarItem}
-                    isMobile
-                    closePanel={close}
-                  />
-                </div>
-              )}
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-    )) || <></>
+          </div>
+          <Disclosure.Panel className="sm:hidden">
+            {({ close }) => (
+              <div className="space-y-1 px-2 pt-2 pb-3 text-center">
+                <NavItemList
+                  previousActiveItem={previousActiveItem}
+                  activeNavbarItem={activeNavbarItem}
+                  isMobile
+                  closePanel={close}
+                />
+              </div>
+            )}
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 };
 
