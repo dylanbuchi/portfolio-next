@@ -82,7 +82,7 @@ const Project = ({ project }: ProjectProps) => {
           sizes="100vw"
         />
       </div>
-      <div className="relative mb-auto bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
+      <div className="relative mb-0 bg-primary_90 p-5 pr-0 pt-2 dark:bg-primary_30">
         <div
           className={`${
             project.techs.length > 2 ? 'justify-center' : 'start'
@@ -98,7 +98,7 @@ const Project = ({ project }: ProjectProps) => {
         <div className="absolute inset-x-0 -top-14 right-0 h-14 bg-gradient-to-t from-slate-900 opacity-50"></div>
       </div>
 
-      <div className="flex items-baseline justify-end">
+      <div className="flex justify-evenly items-center h-[25%]">
         <ProjectButtons project={project} />
       </div>
     </li>
