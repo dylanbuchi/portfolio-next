@@ -1,46 +1,43 @@
+import ProjectButton from 'components/Buttons/ProjectButton';
 import { ProjectProps } from 'interfaces/projects';
-import Link from 'next/link';
 
 const ProjectButtons = ({ project }: ProjectProps) => {
-  const renderButtons = () => {
-    if (project.demoLink) {
-      return <>
-        <div className="mt-2 w-[50%] p-6">
-          <Link
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:lumos relative flex items-center justify-center rounded-2xl border border-transparent bg-blue-700 py-2 px-8 text-sm font-medium text-white_gray  transition dark:bg-accent_primary ">
-            Demo<span className="sr-only">, {project.demoLink}</span>
-
-          </Link>
-        </div>
-        <div className="mt-auto w-[50%] p-6 transition">
-          <Link
-            href={project.codeLink ?? '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:lumos relative flex items-center justify-center rounded-2xl border border-transparent  bg-blue-400 py-2 px-8 text-sm font-medium transition dark:bg-blue-900   dark:text-white_gray">
-            Code<span className="sr-only">, {project.codeLink}</span>
-
-          </Link>
-        </div>
-      </>;
-    }
-    return <>
-      <div className="my-2 mx-auto w-[50%] p-4">
-        <Link
-          href={project.codeLink ?? '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:lumos relative flex items-center justify-center rounded-2xl   border border-transparent bg-blue-400 py-2 px-8 text-sm font-medium dark:bg-blue-900  dark:text-white_gray">
-          Code<span className="sr-only">, {project.codeLink}</span>
-
-        </Link>
-      </div>
-    </>;
+  const GitHubButton = () => {
+    return (
+      <ProjectButton
+        name="GitHub"
+        url={project.codeLink || '#'}
+        classes={githubButtonClasses}
+      />
+    );
   };
-  return renderButtons();
+
+  const LiveDemoButton = () => {
+    return (
+      <ProjectButton
+        name="Live Demo"
+        url={project.demoLink || '#'}
+        classes={demoLinkButtonClasses}
+      />
+    );
+  };
+
+  const demoLinkButtonClasses =
+    'bg-blue-700 py-2 px-4 text-sm font-medium text-white_gray transition dark:bg-accent_primary';
+
+  const githubButtonClasses =
+    'bg-blue-400 py-2 px-4 text-sm font-medium transition dark:bg-blue-900 dark:text-white_gray';
+
+  return (
+    <>
+      {(project.demoLink && (
+        <>
+          <LiveDemoButton />
+          <GitHubButton />
+        </>
+      )) || <GitHubButton />}
+    </>
+  );
 };
 
 export default ProjectButtons;
