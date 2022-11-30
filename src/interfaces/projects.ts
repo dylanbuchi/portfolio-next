@@ -1,6 +1,6 @@
 export interface ProjectLinks {
   codeLink?: string;
-  demoLink?: string;
+  demoLink?: string | null;
 }
 
 export interface ProjectIcons {

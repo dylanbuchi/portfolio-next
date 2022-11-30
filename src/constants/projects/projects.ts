@@ -133,7 +133,7 @@ Object.values(PROJECTS).forEach(({ name, ...item }) => {
     id: uuidv4(),
     name: item.alternativeName ? item.alternativeName : getProjectName(name),
     codeLink: getProjectLink(name),
-    demoLink: item.demoLink,
+    demoLink: item.demoLink || null,
     imgSrc: item.imgSrc,
     imgAlt: `${getProjectLink(name)} Project`,
     techs: item.techs,
